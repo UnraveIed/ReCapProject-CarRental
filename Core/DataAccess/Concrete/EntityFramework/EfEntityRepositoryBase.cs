@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace Core.DataAccess.Concrete.EntityFramework
 {
+    //Tracking ?
     public class EfEntityRepositoryBase<TEntity, TContext> : IEntityRepositoryBase<TEntity>
         where TEntity : class, IEntity, new()
         where TContext : DbContext, new()

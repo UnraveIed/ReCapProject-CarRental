@@ -17,29 +17,41 @@ namespace CarRental.Business.Concrete
         {
         }
 
-        public Task<IList<Car>> GetAll()
+        public async Task<Car> AddAsync(Car entity)
         {
-            throw new NotImplementedException();
+            var addedCar = await UnitOfWork.Cars.AddAsync(entity);
+            await UnitOfWork.SaveAsync();
+            return addedCar;
         }
 
-        public async Task<CarDetailDto> GetDetailAsync(int carId)
+        public async Task DeleteAsync(Car entity)
+        {
+            await UnitOfWork.Cars.DeleteAsync(entity);
+            await UnitOfWork.SaveAsync();
+        }
+
+        public Task<IList<Car>> GetAllAsync()
+        {
+            return UnitOfWork.Cars.GetAllAsync();
+        }
+
+        public Task<Car> GetById(int carId)
         {
             List<Expression<Func<Car, bool>>> predicates = new();
-            List < Expression < Func<Car, object>>> includes = new();
-
             predicates.Add(x => x.Id == carId);
-            includes.Add(x => x.Brand);
-            includes.Add(x => x.Color);
+            return UnitOfWork.Cars.GetAsync(predicates);
+        }
 
-            var selectedCar = await UnitOfWork.Cars.GetAsync(predicates, includes);
+        public async Task<List<CarDetailDto>> GetCarDetail()
+        {
+            return await UnitOfWork.Cars.GetCarDetail();
+        }
 
-            return new CarDetailDto
-            {
-                CarId = carId,
-                BrandName = selectedCar.Brand.Name,
-                ColorName = selectedCar.Color.Name,
-                DailyPrice = selectedCar.DailyPrice
-            };
+        public async Task<Car> UpdateAsync(Car entity)
+        {
+            var updatedCar = await UnitOfWork.Cars.UpdateAsync(entity);
+            await UnitOfWork.SaveAsync();
+            return updatedCar;
         }
     }
 }

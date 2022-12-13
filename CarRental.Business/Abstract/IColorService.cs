@@ -9,6 +9,10 @@ namespace CarRental.Business.Abstract
 {
     public interface IColorService
     {
-        Task<IList<Color>> GetAll();
+        Task<IList<Color>> GetAllAsync();
+        Task<Color> AddAsync(Color entity);
+        Task<Color> UpdateAsync(Color entity);
+        Task DeleteAsync(Color entity);
+        Task<Color> GetById(int colorId);
     }
 }

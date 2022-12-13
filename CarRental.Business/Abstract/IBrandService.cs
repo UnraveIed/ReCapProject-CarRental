@@ -10,5 +10,9 @@ namespace CarRental.Business.Abstract
     public interface IBrandService
     {
         Task<IList<Brand>> GetAllAsync();
+        Task<Brand> AddAsync(Brand entity);
+        Task<Brand> UpdateAsync(Brand entity);
+        Task DeleteAsync(Brand entity);
+        Task<Brand> GetById(int brandId);
     }
 }
