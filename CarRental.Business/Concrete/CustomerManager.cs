@@ -2,6 +2,7 @@
 using CarRental.DataAccess.Abstract;
 using CarRental.Entities.Concrete;
 using Core.Utilities.Results.Abstract;
+using Core.Utilities.Results.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,29 +17,56 @@ namespace CarRental.Business.Concrete
         {
         }
 
-        public Task<IDataResult<Customer>> AddAsync(Customer entity)
+        public async Task<IDataResult<Customer>> AddAsync(Customer entity)
         {
-            throw new NotImplementedException();
+            var userIdStatus = await UnitOfWork.Users.AnyAsync(x=>x.Id == entity.UserId);
+            if (userIdStatus)
+            {
+                return new ErrorDataResult<Customer>("Zaten bir müşteri hesabınız bulunmaktadır.");
+            }
+            var addedUser = await UnitOfWork.Customers.AddAsync(entity);
+            return new SuccessDataResult<Customer>(entity);
         }
 
-        public Task<IResult> HardDeleteAsync(Customer entity)
+        public async Task<IResult> HardDeleteAsync(Customer entity)
         {
-            throw new NotImplementedException();
+            var result = await UnitOfWork.Customers.AnyAsync(x=>x.Id == entity.Id);
+            if (result)
+            {
+                await UnitOfWork.Customers.DeleteAsync(entity);
+                return new SuccessResult();
+            }
+            return new ErrorResult("Kullanıcı bulunamadı.");
         }
 
-        public Task<IDataResult<IList<Customer>>> GetAllAsync()
+        public async Task<IDataResult<IList<Customer>>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            var list = await UnitOfWork.Customers.GetAllAsync();
+            if (list.Count>=1)
+            {
+                return new SuccessDataResult<IList<Customer>>(list);
+            }
+            return new ErrorDataResult<IList<Customer>>("Kayıtlı müşteri bulunmamaktadır.");
         }
 
-        public Task<IDataResult<Customer>> GetByIdAsync(int customerId)
+        public async Task<IDataResult<Customer>> GetByIdAsync(int customerId)
         {
-            throw new NotImplementedException();
+            var customer = await UnitOfWork.Customers.GetAsync(x => x.Id == customerId);
+            if (customer == null)
+            {
+                return new ErrorDataResult<Customer>("Verilen parametrede bir müşteri bulunamadı.");
+            }
+            return new SuccessDataResult<Customer>(customer);
         }
 
-        public Task<IDataResult<Customer>> UpdateAsync(Customer entity)
+        public async Task<IDataResult<Customer>> UpdateAsync(Customer entity)
         {
-            throw new NotImplementedException();
+            var updatedCustomer = await UnitOfWork.Customers.UpdateAsync(entity);
+            if (updatedCustomer == null)
+            {
+                return new ErrorDataResult<Customer>("Bir hata oluştu.");
+            }
+            return new SuccessDataResult<Customer>(updatedCustomer);
         }
     }
 }
