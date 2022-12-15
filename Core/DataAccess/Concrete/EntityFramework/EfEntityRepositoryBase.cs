@@ -69,7 +69,25 @@ namespace Core.DataAccess.Concrete.EntityFramework
 
             return await query.AsNoTracking().SingleOrDefaultAsync();
         }
-        
+
+        public async Task<TEntity> GetAsync(Expression<Func<TEntity, bool>> predicate, IList<Expression<Func<TEntity, object>>> includes = null)
+        {
+            IQueryable<TEntity> query = _context.Set<TEntity>();
+            if (query != null)
+            {
+                query = query.Where(predicate);
+            }
+            if (includes != null && includes.Any())
+            {
+                foreach (var include in includes)
+                {
+                    query = query.Include(include);
+                }
+            }
+
+            return await query.AsNoTracking().SingleOrDefaultAsync();
+        }
+
 
         public async Task<IList<TEntity>> GetAllAsync(IList<Expression<Func<TEntity, bool>>> predicates = null, IList<Expression<Func<TEntity, object>>> includes = null)
         {
@@ -80,6 +98,24 @@ namespace Core.DataAccess.Concrete.EntityFramework
                 {
                     query = query.Where(predicate);
                 }
+            }
+            if (includes != null && includes.Any())
+            {
+                foreach (var include in includes)
+                {
+                    query = query.Include(include);
+                }
+            }
+
+            return await query.AsNoTracking().ToListAsync();
+        }
+
+        public async Task<IList<TEntity>> GetAllAsync(Expression<Func<TEntity, bool>> predicate, IList<Expression<Func<TEntity, object>>> includes = null)
+        {
+            IQueryable<TEntity> query = _context.Set<TEntity>();
+            if (query != null)
+            {
+                query = query.Where(predicate);
             }
             if (includes != null && includes.Any())
             {

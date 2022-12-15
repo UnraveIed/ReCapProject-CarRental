@@ -11,6 +11,9 @@ namespace CarRental.DataAccess.Abstract
         IBrandRepository Brands { get; }
         ICarRepository Cars { get; }
         IColorRepository Colors { get; }
+        IUserRepository Users { get; }
+        IRentalRepository Rentals { get; }
+        ICustomerRepository Customers { get; }
         Task<int> SaveAsync();
     }
 }

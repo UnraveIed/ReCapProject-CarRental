@@ -2,6 +2,8 @@
 using CarRental.DataAccess.Abstract;
 using CarRental.Entities.Concrete;
 using CarRental.Entities.Dtos;
+using Core.Utilities.Results.Abstract;
+using Core.Utilities.Results.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,41 +19,43 @@ namespace CarRental.Business.Concrete
         {
         }
 
-        public async Task<Car> AddAsync(Car entity)
+        public async Task<IDataResult<Car>> AddAsync(Car entity)
         {
             var addedCar = await UnitOfWork.Cars.AddAsync(entity);
             await UnitOfWork.SaveAsync();
-            return addedCar;
+            return new SuccessDataResult<Car>(addedCar);
         }
 
-        public async Task DeleteAsync(Car entity)
+        public async Task<IResult> HardDeleteAsync(Car entity)
         {
             await UnitOfWork.Cars.DeleteAsync(entity);
             await UnitOfWork.SaveAsync();
+            return new SuccessResult();
         }
 
-        public Task<IList<Car>> GetAllAsync()
+        public async Task<IDataResult<IList<Car>>> GetAllAsync()
         {
-            return UnitOfWork.Cars.GetAllAsync();
+            return new SuccessDataResult<IList<Car>>(await UnitOfWork.Cars.GetAllAsync());
         }
 
-        public Task<Car> GetById(int carId)
+        public async Task<IDataResult<Car>> GetById(int carId)
         {
             List<Expression<Func<Car, bool>>> predicates = new();
             predicates.Add(x => x.Id == carId);
-            return UnitOfWork.Cars.GetAsync(predicates);
+            return new SuccessDataResult<Car>(await UnitOfWork.Cars.GetAsync(predicates));
         }
 
-        public async Task<List<CarDetailDto>> GetCarDetail()
+        public async Task<IDataResult<IList<CarDetailDto>>> GetCarDetail()
         {
-            return await UnitOfWork.Cars.GetCarDetail();
+            var carDetails = await UnitOfWork.Cars.GetCarDetail();
+            return new SuccessDataResult<IList<CarDetailDto>>(carDetails);
         }
 
-        public async Task<Car> UpdateAsync(Car entity)
+        public async Task<IDataResult<Car>> UpdateAsync(Car entity)
         {
             var updatedCar = await UnitOfWork.Cars.UpdateAsync(entity);
             await UnitOfWork.SaveAsync();
-            return updatedCar;
+            return new SuccessDataResult<Car>(updatedCar);
         }
     }
 }

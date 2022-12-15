@@ -12,7 +12,9 @@ namespace Core.DataAccess.Abstract
         where T : class, IEntity, new()
     {
         Task<IList<T>> GetAllAsync(IList<Expression<Func<T,bool>>> predicates = null, IList<Expression<Func<T,object>>> includes = null);
+        Task<IList<T>> GetAllAsync(Expression<Func<T, bool>> predicate, IList<Expression<Func<T, object>>> includes = null);
         Task<T> GetAsync(IList<Expression<Func<T, bool>>> predicates, IList<Expression<Func<T, object>>> includes = null);
+        Task<T> GetAsync(Expression<Func<T, bool>> predicate, IList<Expression<Func<T, object>>> includes = null);
         Task<T> AddAsync(T entity);
         Task<T> UpdateAsync(T entity);
         Task DeleteAsync(T entity);

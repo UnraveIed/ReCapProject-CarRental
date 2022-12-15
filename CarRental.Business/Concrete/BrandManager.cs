@@ -1,6 +1,8 @@
 ﻿using CarRental.Business.Abstract;
 using CarRental.DataAccess.Abstract;
 using CarRental.Entities.Concrete;
+using Core.Utilities.Results.Abstract;
+using Core.Utilities.Results.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,36 +18,37 @@ namespace CarRental.Business.Concrete
         {
         }
 
-        public async Task<Brand> AddAsync(Brand entity)
+        public async Task<IDataResult<Brand>> AddAsync(Brand entity)
         {
             var addedBrand = await UnitOfWork.Brands.AddAsync(entity);
             await UnitOfWork.SaveAsync();
-            return addedBrand;
+            return new SuccessDataResult<Brand>(addedBrand);
         }
 
-        public async Task DeleteAsync(Brand entity)
+        public async Task<IResult> HardDeleteAsync(Brand entity)
         {
             await UnitOfWork.Brands.DeleteAsync(entity);
             await UnitOfWork.SaveAsync();
+            return new SuccessResult();
         }
 
-        public async Task<IList<Brand>> GetAllAsync()
+        public async Task<IDataResult<IList<Brand>>> GetAllAsync()
         {
-            return await UnitOfWork.Brands.GetAllAsync();
+            return new SuccessDataResult<IList<Brand>>(await UnitOfWork.Brands.GetAllAsync());
         }
 
-        public async Task<Brand> GetById(int brandId)
+        public async Task<IDataResult<Brand>> GetById(int brandId)
         {
             List<Expression<Func<Brand, bool>>> predi = new();
             predi.Add(x => x.Id == brandId);
-            return await UnitOfWork.Brands.GetAsync(predi);
+            return new SuccessDataResult<Brand>(await UnitOfWork.Brands.GetAsync(predi));
         }
 
-        public async Task<Brand> UpdateAsync(Brand entity)
+        public async Task<IDataResult<Brand>> UpdateAsync(Brand entity)
         {
             var updatedBrand = await UnitOfWork.Brands.UpdateAsync(entity);
             await UnitOfWork.SaveAsync();
-            return updatedBrand;
+            return new SuccessDataResult<Brand>(updatedBrand);
         }
     }
 }

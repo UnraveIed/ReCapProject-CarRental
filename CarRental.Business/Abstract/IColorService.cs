@@ -1,4 +1,5 @@
 ﻿using CarRental.Entities.Concrete;
+using Core.Utilities.Results.Abstract;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,10 +10,10 @@ namespace CarRental.Business.Abstract
 {
     public interface IColorService
     {
-        Task<IList<Color>> GetAllAsync();
-        Task<Color> AddAsync(Color entity);
-        Task<Color> UpdateAsync(Color entity);
-        Task DeleteAsync(Color entity);
-        Task<Color> GetById(int colorId);
+        Task<IDataResult<IList<Color>>> GetAllAsync();
+        Task<IDataResult<Color>> AddAsync(Color entity);
+        Task<IDataResult<Color>> UpdateAsync(Color entity);
+        Task<IResult> HardDeleteAsync(Color entity);
+        Task<IDataResult<Color>> GetById(int colorId);
     }
 }

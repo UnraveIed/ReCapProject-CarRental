@@ -1,9 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
-using CarRental.Business.Abstract;
 using CarRental.Business.Concrete;
-using CarRental.DataAccess.Abstract;
 using CarRental.DataAccess.Concrete;
-using CarRental.DataAccess.Concrete.EntityFramework.Repositories;
 using CarRental.Entities.Concrete;
 
 CarManager car = new(new UnitOfWork(new CarRental.DataAccess.Concrete.EntityFramework.Contexts.CarRentalContext()));
@@ -13,8 +10,11 @@ BrandManager b = new(new UnitOfWork(new CarRental.DataAccess.Concrete.EntityFram
 //await CarOperations(car);
 //await ColorOperations(c);
 //await BrandOperations(b);
+//await car.GetAllAsync().Data;
 
-foreach (var item in await car.GetCarDetail())
+var list = await car.GetCarDetail();
+
+foreach (var item in list.Data)
 {
     Console.WriteLine(item.CarId);
     Console.WriteLine(item.ColorName);
@@ -35,15 +35,15 @@ static async Task CarOperations(CarManager car)
     };
 
     var addedCar = await car.AddAsync(car1);
-    Console.WriteLine(addedCar.Description + " eklendi");
+    Console.WriteLine(addedCar.Data.Description + " eklendi");
 
 
     var updateCar = car1;
     car1.Description = "Degisti";
     var updatedCar = await car.UpdateAsync(updateCar);
-    Console.WriteLine(updatedCar.Description + " guncellendi");
+    Console.WriteLine(updatedCar.Data.Description + " guncellendi");
 
-    await car.DeleteAsync(updatedCar);
+    await car.HardDeleteAsync(updatedCar.Data);
 }
 
 static async Task ColorOperations(ColorManager c)
@@ -54,14 +54,14 @@ static async Task ColorOperations(ColorManager c)
     };
 
     var addedColor = await c.AddAsync(color1);
-    Console.WriteLine(addedColor.Name + " eklendi");
+    Console.WriteLine(addedColor.Data.Name + " eklendi");
 
     var updateColor = addedColor;
-    updateColor.Name = "Yeşils";
-    var updatedColor = await c.UpdateAsync(updateColor);
-    Console.WriteLine(updatedColor.Name + " guncellendi");
+    updateColor.Data.Name = "Yeşils";
+    var updatedColor = await c.UpdateAsync(updateColor.Data);
+    Console.WriteLine(updatedColor.Data.Name + " guncellendi");
 
-    await c.DeleteAsync(updatedColor);
+    await c.HardDeleteAsync(updatedColor.Data);
 }
 
 static async Task BrandOperations(BrandManager b)
@@ -72,13 +72,13 @@ static async Task BrandOperations(BrandManager b)
     };
 
     var addedBrand = await b.AddAsync(brand1);
-    Console.WriteLine(addedBrand.Name + " eklendi");
+    Console.WriteLine(addedBrand.Data.Name + " eklendi");
 
 
     var updateBrand = brand1;
     brand1.Name = "Degisti";
     var updatedBrand = await b.UpdateAsync(updateBrand);
-    Console.WriteLine(updatedBrand.Name + " guncellendi");
+    Console.WriteLine(updatedBrand.Data.Name + " guncellendi");
 
-    await b.DeleteAsync(updatedBrand);
+    await b.HardDeleteAsync(updatedBrand.Data);
 }

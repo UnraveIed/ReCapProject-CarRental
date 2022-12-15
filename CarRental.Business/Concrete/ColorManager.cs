@@ -1,6 +1,8 @@
 ﻿using CarRental.Business.Abstract;
 using CarRental.DataAccess.Abstract;
 using CarRental.Entities.Concrete;
+using Core.Utilities.Results.Abstract;
+using Core.Utilities.Results.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,36 +18,40 @@ namespace CarRental.Business.Concrete
         {
         }
 
-        public async Task<Color> AddAsync(Color entity)
+        public async Task<IDataResult<Color>> AddAsync(Color entity)
         {
             var addedColor = await UnitOfWork.Colors.AddAsync(entity);
             await UnitOfWork.SaveAsync();
-            return addedColor;
+            return new SuccessDataResult<Color>(addedColor);
         }
 
-        public async Task DeleteAsync(Color entity)
+        public async Task<IResult> HardDeleteAsync(Color entity)
         {
             await UnitOfWork.Colors.DeleteAsync(entity);
             await UnitOfWork.SaveAsync();
+            return new SuccessResult();
         }
 
-        public async Task<IList<Color>> GetAllAsync()
+        public async Task<IDataResult<IList<Color>>> GetAllAsync()
         {
-            return await UnitOfWork.Colors.GetAllAsync();
+            return new SuccessDataResult<IList<Color>>(await UnitOfWork.Colors.GetAllAsync());
         }
 
-        public async Task<Color> GetById(int colorId)
+        public async Task<IDataResult<Color>> GetById(int colorId)
         {
-            List<Expression<Func<Color, bool>>> predicates = new();
-            predicates.Add(x => x.Id == colorId);
-            return await UnitOfWork.Colors.GetAsync(predicates);
+            var color = await UnitOfWork.Colors.GetAsync(x => x.Id == colorId);
+            if (color == null)
+            {
+                return new ErrorDataResult<Color>("Renk bulunamadı.");
+            }
+            return new SuccessDataResult<Color>(color);
         }
 
-        public async Task<Color> UpdateAsync(Color entity)
+        public async Task<IDataResult<Color>> UpdateAsync(Color entity)
         {
             var updatedColor = await UnitOfWork.Colors.UpdateAsync(entity);
             await UnitOfWork.SaveAsync();
-            return updatedColor;
+            return new SuccessDataResult<Color>(updatedColor);
         }
     }
 }

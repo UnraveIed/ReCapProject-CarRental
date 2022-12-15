@@ -1,5 +1,6 @@
 ﻿using CarRental.Entities.Concrete;
 using CarRental.Entities.Dtos;
+using Core.Utilities.Results.Abstract;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,11 +11,11 @@ namespace CarRental.Business.Abstract
 {
     public interface ICarService
     {
-        Task<IList<Car>> GetAllAsync();
-        Task<List<CarDetailDto>> GetCarDetail();
-        Task<Car> AddAsync(Car entity);
-        Task<Car> UpdateAsync(Car entity);
-        Task DeleteAsync(Car entity);
-        Task<Car> GetById(int carId);
+        Task<IDataResult<IList<Car>>> GetAllAsync();
+        Task<IDataResult<IList<CarDetailDto>>> GetCarDetail();
+        Task<IDataResult<Car>> AddAsync(Car entity);
+        Task<IDataResult<Car>> UpdateAsync(Car entity);
+        Task<IResult> HardDeleteAsync(Car entity);
+        Task<IDataResult<Car>> GetById(int carId);
     }
 }
