@@ -41,7 +41,12 @@ namespace CarRental.Business.Concrete
         {
             List<Expression<Func<Brand, bool>>> predi = new();
             predi.Add(x => x.Id == brandId);
-            return new SuccessDataResult<Brand>(await UnitOfWork.Brands.GetAsync(predi));
+            var brand = await UnitOfWork.Brands.GetAsync(predi);
+            if (brand == null)
+            {
+                return new ErrorDataResult<Brand>("Verilen parametrede bir marka bulunamadı.");
+            }
+            return new SuccessDataResult<Brand>(brand);
         }
 
         public async Task<IDataResult<Brand>> UpdateAsync(Brand entity)

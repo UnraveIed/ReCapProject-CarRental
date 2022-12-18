@@ -17,6 +17,11 @@ namespace CarRental.DataAccess.Concrete.EntityFramework.Contexts
                 .UseSqlServer(connectionString: @"server=BATU\SQLEXPRESS; database=CarRental; Trusted_Connection=True; Connect Timeout=30;MultipleActiveResultSets=True;");
         }
 
+        //public CarRentalContext(DbContextOptions<CarRentalContext> dbContextOptions) : base(dbContextOptions)
+        //{
+
+        //}
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new BrandMap());

@@ -38,11 +38,16 @@ namespace CarRental.Business.Concrete
             return new SuccessDataResult<IList<Car>>(await UnitOfWork.Cars.GetAllAsync());
         }
 
-        public async Task<IDataResult<Car>> GetById(int carId)
+        public async Task<IDataResult<Car>> GetByIdAsync(int carId)
         {
             List<Expression<Func<Car, bool>>> predicates = new();
             predicates.Add(x => x.Id == carId);
-            return new SuccessDataResult<Car>(await UnitOfWork.Cars.GetAsync(predicates));
+            var car = await UnitOfWork.Cars.GetAsync(predicates);
+            if (car == null)
+            {
+                new ErrorDataResult<Car>("Verilen parametrede bir araba bulunamadı.");
+            }
+            return new SuccessDataResult<Car>(car);
         }
 
         public async Task<IDataResult<IList<CarDetailDto>>> GetCarDetail()

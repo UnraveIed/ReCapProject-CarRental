@@ -14,6 +14,6 @@ namespace CarRental.Business.Abstract
         Task<IDataResult<Color>> AddAsync(Color entity);
         Task<IDataResult<Color>> UpdateAsync(Color entity);
         Task<IResult> HardDeleteAsync(Color entity);
-        Task<IDataResult<Color>> GetById(int colorId);
+        Task<IDataResult<Color>> GetByIdAsync(int colorId);
     }
 }

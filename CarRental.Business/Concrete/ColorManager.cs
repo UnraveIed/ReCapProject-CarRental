@@ -37,7 +37,7 @@ namespace CarRental.Business.Concrete
             return new SuccessDataResult<IList<Color>>(await UnitOfWork.Colors.GetAllAsync());
         }
 
-        public async Task<IDataResult<Color>> GetById(int colorId)
+        public async Task<IDataResult<Color>> GetByIdAsync(int colorId)
         {
             var color = await UnitOfWork.Colors.GetAsync(x => x.Id == colorId);
             if (color == null)
