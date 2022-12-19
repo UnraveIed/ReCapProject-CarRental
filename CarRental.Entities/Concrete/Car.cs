@@ -18,7 +18,7 @@ namespace CarRental.Entities.Concrete
         public virtual Color Color { get; set; }
 
         // Rental N
-        public virtual ICollection<Rental> Rentals { get; set; }
+        public virtual ICollection<Rental>? Rentals { get; set; }
 
         public short ModelYear { get; set; }
         public decimal DailyPrice { get; set; }

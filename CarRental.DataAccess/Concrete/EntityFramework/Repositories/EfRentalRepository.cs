@@ -12,8 +12,5 @@ namespace CarRental.DataAccess.Concrete.EntityFramework.Repositories
 {
     public class EfRentalRepository : EfEntityRepositoryBase<Rental, CarRentalContext>, IRentalRepository
     {
-        public EfRentalRepository(CarRentalContext context) : base(context)
-        {
-        }
     }
 }

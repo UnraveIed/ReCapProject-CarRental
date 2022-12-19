@@ -1,11 +1,12 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using CarRental.Business.Concrete;
 using CarRental.DataAccess.Concrete;
+using CarRental.DataAccess.Concrete.EntityFramework.Repositories;
 using CarRental.Entities.Concrete;
 
-CarManager car = new(new UnitOfWork(new CarRental.DataAccess.Concrete.EntityFramework.Contexts.CarRentalContext()));
-ColorManager c = new(new UnitOfWork(new CarRental.DataAccess.Concrete.EntityFramework.Contexts.CarRentalContext()));
-BrandManager b = new(new UnitOfWork(new CarRental.DataAccess.Concrete.EntityFramework.Contexts.CarRentalContext()));
+CarManager car = new(new EfCarRepository());
+ColorManager c = new(new EfColorRepository());
+BrandManager b = new(new EfBrandRepository());
 
 //await CarOperations(car);
 //await ColorOperations(c);

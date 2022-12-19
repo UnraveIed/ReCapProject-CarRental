@@ -12,8 +12,5 @@ namespace CarRental.DataAccess.Concrete.EntityFramework.Repositories
 {
     public class EfColorRepository : EfEntityRepositoryBase<Color, CarRentalContext>, IColorRepository
     {
-        public EfColorRepository(CarRentalContext context) : base(context)
-        {
-        }
     }
 }

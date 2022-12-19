@@ -14,15 +14,10 @@ namespace CarRental.DataAccess.Concrete.EntityFramework.Repositories
 {
     public class EfCarRepository : EfEntityRepositoryBase<Car, CarRentalContext>, ICarRepository
     {
-        private readonly CarRentalContext _context;
-        public EfCarRepository(CarRentalContext context) : base(context)
-        {
-            _context = context;
-        }
 
         public async Task<List<CarDetailDto>> GetCarDetail()
         {
-            using (var context = _context)
+            using (var context = new CarRentalContext())
             {
                 var result = from car in context.Cars
                              join brand in context.Brands

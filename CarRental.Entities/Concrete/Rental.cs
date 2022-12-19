@@ -10,9 +10,9 @@ namespace CarRental.Entities.Concrete
     public class Rental : EntityBase, IEntity
     {
         public int CarId { get; set; }
-        public virtual Car Car { get; set; }
+        public virtual Car? Car { get; set; }
         public int CustomerId { get; set; }
-        public virtual Customer Customer { get; set; }
+        public virtual Customer? Customer { get; set; }
 
         public DateTime RentDate { get; set; }
         public DateTime? ReturnDate { get; set; }

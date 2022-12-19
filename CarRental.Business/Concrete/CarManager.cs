@@ -1,7 +1,9 @@
 ﻿using CarRental.Business.Abstract;
+using CarRental.Business.ValidationRules.FluentValidation;
 using CarRental.DataAccess.Abstract;
 using CarRental.Entities.Concrete;
 using CarRental.Entities.Dtos;
+using Core.Aspects.Autofac.Validation;
 using Core.Utilities.Results.Abstract;
 using Core.Utilities.Results.Concrete;
 using System;
@@ -13,36 +15,39 @@ using System.Threading.Tasks;
 
 namespace CarRental.Business.Concrete
 {
-    public class CarManager : ManagerBase, ICarService
+    //public class CarManager : ManagerBase, ICarService
+    public class CarManager : ICarService
     {
-        public CarManager(IUnitOfWork unitOfWork) : base(unitOfWork)
+        private readonly ICarRepository _carRepository;
+
+        public CarManager(ICarRepository carRepository)
         {
+            _carRepository = carRepository;
         }
 
+        [ValidationAspect(typeof(CarValidator))]
         public async Task<IDataResult<Car>> AddAsync(Car entity)
         {
-            var addedCar = await UnitOfWork.Cars.AddAsync(entity);
-            await UnitOfWork.SaveAsync();
+            var addedCar = await _carRepository.AddAsync(entity);
             return new SuccessDataResult<Car>(addedCar);
         }
 
         public async Task<IResult> HardDeleteAsync(Car entity)
         {
-            await UnitOfWork.Cars.DeleteAsync(entity);
-            await UnitOfWork.SaveAsync();
+            await _carRepository.DeleteAsync(entity);
             return new SuccessResult();
         }
 
         public async Task<IDataResult<IList<Car>>> GetAllAsync()
         {
-            return new SuccessDataResult<IList<Car>>(await UnitOfWork.Cars.GetAllAsync());
+            return new SuccessDataResult<IList<Car>>(await _carRepository.GetAllAsync());
         }
 
         public async Task<IDataResult<Car>> GetByIdAsync(int carId)
         {
             List<Expression<Func<Car, bool>>> predicates = new();
             predicates.Add(x => x.Id == carId);
-            var car = await UnitOfWork.Cars.GetAsync(predicates);
+            var car = await _carRepository.GetAsync(predicates);
             if (car == null)
             {
                 new ErrorDataResult<Car>("Verilen parametrede bir araba bulunamadı.");
@@ -52,15 +57,64 @@ namespace CarRental.Business.Concrete
 
         public async Task<IDataResult<IList<CarDetailDto>>> GetCarDetail()
         {
-            var carDetails = await UnitOfWork.Cars.GetCarDetail();
+            var carDetails = await _carRepository.GetCarDetail();
             return new SuccessDataResult<IList<CarDetailDto>>(carDetails);
         }
 
         public async Task<IDataResult<Car>> UpdateAsync(Car entity)
         {
-            var updatedCar = await UnitOfWork.Cars.UpdateAsync(entity);
-            await UnitOfWork.SaveAsync();
+            var updatedCar = await _carRepository.UpdateAsync(entity);
             return new SuccessDataResult<Car>(updatedCar);
         }
+
+        #region UnitOfWork
+        //public CarManager(IUnitOfWork unitOfWork) : base(unitOfWork)
+        //{
+        //}
+
+        //public async Task<IDataResult<Car>> AddAsync(Car entity)
+        //{
+        //    var addedCar = await UnitOfWork.Cars.AddAsync(entity);
+        //    await UnitOfWork.SaveAsync();
+        //    return new SuccessDataResult<Car>(addedCar);
+        //}
+
+        //public async Task<IResult> HardDeleteAsync(Car entity)
+        //{
+        //    await UnitOfWork.Cars.DeleteAsync(entity);
+        //    await UnitOfWork.SaveAsync();
+        //    return new SuccessResult();
+        //}
+
+        //public async Task<IDataResult<IList<Car>>> GetAllAsync()
+        //{
+        //    return new SuccessDataResult<IList<Car>>(await UnitOfWork.Cars.GetAllAsync());
+        //}
+
+        //public async Task<IDataResult<Car>> GetByIdAsync(int carId)
+        //{
+        //    List<Expression<Func<Car, bool>>> predicates = new();
+        //    predicates.Add(x => x.Id == carId);
+        //    var car = await UnitOfWork.Cars.GetAsync(predicates);
+        //    if (car == null)
+        //    {
+        //        new ErrorDataResult<Car>("Verilen parametrede bir araba bulunamadı.");
+        //    }
+        //    return new SuccessDataResult<Car>(car);
+        //}
+
+        //public async Task<IDataResult<IList<CarDetailDto>>> GetCarDetail()
+        //{
+        //    var carDetails = await UnitOfWork.Cars.GetCarDetail();
+        //    return new SuccessDataResult<IList<CarDetailDto>>(carDetails);
+        //}
+
+        //public async Task<IDataResult<Car>> UpdateAsync(Car entity)
+        //{
+        //    var updatedCar = await UnitOfWork.Cars.UpdateAsync(entity);
+        //    await UnitOfWork.SaveAsync();
+        //    return new SuccessDataResult<Car>(updatedCar);
+        //}
+        #endregion
     }
 }

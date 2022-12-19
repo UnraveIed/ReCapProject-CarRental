@@ -1,5 +1,8 @@
+using Autofac;
+using Autofac.Extensions.DependencyInjection;
 using CarRental.Business.Abstract;
 using CarRental.Business.Concrete;
+using CarRental.Business.DependencyResolvers.Autofac;
 using CarRental.DataAccess.Abstract;
 using CarRental.DataAccess.Concrete;
 using CarRental.DataAccess.Concrete.EntityFramework.Contexts;
@@ -8,25 +11,33 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
+
+builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory())
+    .ConfigureContainer<ContainerBuilder>(builder =>
+    {
+        builder.RegisterModule(new AutofacBusinessModule());
+    });
+
 // Add services to the container.
 
 builder.Services.AddControllers();
 
-builder.Services.AddDbContext<CarRentalContext>();
 
-builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
-builder.Services.AddScoped<IBrandService, BrandManager>();
-builder.Services.AddScoped<IBrandRepository, EfBrandRepository>();
-builder.Services.AddScoped<ICarService, CarManager>();
-builder.Services.AddScoped<ICarRepository, EfCarRepository>();
-builder.Services.AddScoped<IColorService, ColorManager>();
-builder.Services.AddScoped<IColorRepository, EfColorRepository>();
-builder.Services.AddScoped<ICustomerService, CustomerManager>();
-builder.Services.AddScoped<ICustomerRepository, EfCustomerRepository>();
-builder.Services.AddScoped<IRentalService, RentalManager>();
-builder.Services.AddScoped<IRentalRepository, EfRentalRepository>();
-builder.Services.AddScoped<IUserService, UserManager>();
-builder.Services.AddScoped<IUserRepository, EfUserRepository>();
+//builder.Services.AddDbContext<CarRentalContext>();
+
+//builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+//builder.Services.AddScoped<IBrandService, BrandManager>();
+//builder.Services.AddScoped<IBrandRepository, EfBrandRepository>();
+//builder.Services.AddScoped<ICarService, CarManager>();
+//builder.Services.AddScoped<ICarRepository, EfCarRepository>();
+//builder.Services.AddScoped<IColorService, ColorManager>();
+//builder.Services.AddScoped<IColorRepository, EfColorRepository>();
+//builder.Services.AddScoped<ICustomerService, CustomerManager>();
+//builder.Services.AddScoped<ICustomerRepository, EfCustomerRepository>();
+//builder.Services.AddScoped<IRentalService, RentalManager>();
+//builder.Services.AddScoped<IRentalRepository, EfRentalRepository>();
+//builder.Services.AddScoped<IUserService, UserManager>();
+//builder.Services.AddScoped<IUserRepository, EfUserRepository>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

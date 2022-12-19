@@ -12,6 +12,6 @@ namespace CarRental.Entities.Concrete
         public int UserId { get; set; }
         public string CompanyName { get; set; }
         public virtual User User { get; set; }
-        public virtual ICollection<Rental> Rentals { get; set; }
+        public virtual ICollection<Rental>? Rentals { get; set; }
     }
 }

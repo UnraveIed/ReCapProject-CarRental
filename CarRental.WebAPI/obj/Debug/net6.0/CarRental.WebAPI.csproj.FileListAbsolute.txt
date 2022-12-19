@@ -65,3 +65,9 @@ C:\Users\np_ba\source\repos\ReCapProject\CarRental.WebAPI\obj\Debug\net6.0\refin
 C:\Users\np_ba\source\repos\ReCapProject\CarRental.WebAPI\obj\Debug\net6.0\CarRental.WebAPI.pdb
 C:\Users\np_ba\source\repos\ReCapProject\CarRental.WebAPI\obj\Debug\net6.0\CarRental.WebAPI.genruntimeconfig.cache
 C:\Users\np_ba\source\repos\ReCapProject\CarRental.WebAPI\obj\Debug\net6.0\ref\CarRental.WebAPI.dll
+C:\Users\np_ba\source\repos\ReCapProject\CarRental.WebAPI\bin\Debug\net6.0\Autofac.dll
+C:\Users\np_ba\source\repos\ReCapProject\CarRental.WebAPI\bin\Debug\net6.0\Autofac.Extensions.DependencyInjection.dll
+C:\Users\np_ba\source\repos\ReCapProject\CarRental.WebAPI\bin\Debug\net6.0\Autofac.Extras.DynamicProxy.dll
+C:\Users\np_ba\source\repos\ReCapProject\CarRental.WebAPI\bin\Debug\net6.0\Castle.Core.dll
+C:\Users\np_ba\source\repos\ReCapProject\CarRental.WebAPI\obj\Debug\net6.0\CarRental.WebAPI.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\np_ba\source\repos\ReCapProject\CarRental.WebAPI\bin\Debug\net6.0\FluentValidation.dll

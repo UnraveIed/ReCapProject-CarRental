@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace CarRental.Business.Concrete
 {
-    public class ManagerBase
-    {
-        protected IUnitOfWork UnitOfWork { get;}
+    //public class ManagerBase
+    //{
+    //    protected IUnitOfWork UnitOfWork { get;}
 
-        public ManagerBase(IUnitOfWork unitOfWork)
-        {
-            UnitOfWork = unitOfWork;
-        }
-    }
+    //    public ManagerBase(IUnitOfWork unitOfWork)
+    //    {
+    //        UnitOfWork = unitOfWork;
+    //    }
+    //}
 }
