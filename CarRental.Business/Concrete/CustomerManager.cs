@@ -18,18 +18,16 @@ namespace CarRental.Business.Concrete
     public class CustomerManager : ICustomerService
     {
         private readonly ICustomerRepository _customerRepository;
-        private readonly IUserRepository _userRepository;
 
-        public CustomerManager(ICustomerRepository customerRepository, IUserRepository userRepository)
+        public CustomerManager(ICustomerRepository customerRepository)
         {
             _customerRepository = customerRepository;
-            _userRepository = userRepository;
         }
 
         [ValidationAspect(typeof(CustomerValidator))]
         public async Task<IDataResult<Customer>> AddAsync(Customer entity)
         {
-            var userIdStatus = await _userRepository.AnyAsync(x => x.Id == entity.UserId);
+            var userIdStatus = await _customerRepository.AnyAsync(x => x.UserId == entity.UserId);
             if (userIdStatus)
             {
                 return new ErrorDataResult<Customer>("Zaten bir müşteri hesabınız bulunmaktadır.");

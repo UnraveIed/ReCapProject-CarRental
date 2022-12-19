@@ -33,8 +33,8 @@ namespace CarRental.Business.Concrete
             {
                 return new ErrorDataResult<Rental>("Araç aktif kirada.");
             }
-            await _rentalRepository.AddAsync(entity);
-            return new SuccessDataResult<Rental>();
+            var addedRental = await _rentalRepository.AddAsync(entity);
+            return new SuccessDataResult<Rental>(addedRental);
         }
 
         public async Task<IResult> HardDeleteAsync(Rental entity)

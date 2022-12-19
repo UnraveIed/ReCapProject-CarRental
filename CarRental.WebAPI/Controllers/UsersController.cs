@@ -28,9 +28,9 @@ namespace CarRental.WebAPI.Controllers
         }
 
         [HttpGet("getbyid")]
-        public async Task<IActionResult> GetById(int carId)
+        public async Task<IActionResult> GetById(int userId)
         {
-            var result = await _userService.GetByIdAsync(carId);
+            var result = await _userService.GetByIdAsync(userId);
             if (result.IsSuccess)
             {
                 return Ok(result);
@@ -50,9 +50,9 @@ namespace CarRental.WebAPI.Controllers
         }
 
         [HttpDelete("delete")]
-        public async Task<IActionResult> Delete(int carId)
+        public async Task<IActionResult> Delete(int userId)
         {
-            var brand = await _userService.GetByIdAsync(carId);
+            var brand = await _userService.GetByIdAsync(userId);
             if (brand.IsSuccess)
             {
                 var result = await _userService.HardDeleteAsync(brand.Data);

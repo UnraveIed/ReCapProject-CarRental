@@ -11,11 +11,11 @@ namespace CarRental.Entities.Concrete
     {
         // Brand 1-n
         public int BrandId { get; set; }
-        public virtual Brand Brand { get; set; }
+        public virtual Brand? Brand { get; set; }
 
         // Color 1-n
         public int ColorId { get; set; }
-        public virtual Color Color { get; set; }
+        public virtual Color? Color { get; set; }
 
         // Rental N
         public virtual ICollection<Rental>? Rentals { get; set; }
