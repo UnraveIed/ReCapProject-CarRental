@@ -18,7 +18,6 @@ namespace CarRental.Business.Concrete
     public class CustomerManager : ICustomerService
     {
         private readonly ICustomerRepository _customerRepository;
-
         public CustomerManager(ICustomerRepository customerRepository)
         {
             _customerRepository = customerRepository;

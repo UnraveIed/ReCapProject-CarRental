@@ -66,3 +66,5 @@ C:\Users\np_ba\source\repos\ReCapProject\CarRental.ConsoleUI\bin\Debug\net6.0\Au
 C:\Users\np_ba\source\repos\ReCapProject\CarRental.ConsoleUI\bin\Debug\net6.0\Autofac.Extras.DynamicProxy.dll
 C:\Users\np_ba\source\repos\ReCapProject\CarRental.ConsoleUI\bin\Debug\net6.0\Castle.Core.dll
 C:\Users\np_ba\source\repos\ReCapProject\CarRental.ConsoleUI\bin\Debug\net6.0\FluentValidation.dll
+C:\Users\np_ba\source\repos\ReCapProject\CarRental.ConsoleUI\bin\Debug\net6.0\Microsoft.AspNetCore.Http.Features.dll
+C:\Users\np_ba\source\repos\ReCapProject\CarRental.ConsoleUI\bin\Debug\net6.0\System.IO.Pipelines.dll

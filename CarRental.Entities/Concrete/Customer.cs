@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CarRental.Entities.Concrete
 {
-    public class Customer : EntityBase, IEntity
+    public class Customer : EntityBase
     {
         public int UserId { get; set; }
         public string CompanyName { get; set; }

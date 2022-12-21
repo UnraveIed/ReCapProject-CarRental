@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CarRental.Entities.Concrete;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,6 +15,8 @@ namespace CarRental.Business.Constants
         public static string UsersListed = "Kullanıcılar listelendi.";
         public static string UsersNotFound = "Kullanıcı bulunamadı.";
         public static string MaintanceTime = "Bakım saati.";
-
+        public static string ImageLimitExceeded = "Araca kayıtlı resim sayısını aşmış bulunmaktasınız.";
+        public static string DefaultCarImage = "Araca kayıtlı bir resim bulunamadığı için default resim görüntülenmektedir.";
+        public static string NotFound = "Kayitli bir veri bulunamadi.";
     }
 }

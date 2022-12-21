@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CarRental.Entities.Concrete
 {
-    public class Rental : EntityBase, IEntity
+    public class Rental : EntityBase
     {
         public int CarId { get; set; }
         public virtual Car? Car { get; set; }

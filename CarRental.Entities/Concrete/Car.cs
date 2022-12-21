@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CarRental.Entities.Concrete
 {
-    public class Car : EntityBase, IEntity
+    public class Car : EntityBase
     {
         // Brand 1-n
         public int BrandId { get; set; }
@@ -19,6 +19,9 @@ namespace CarRental.Entities.Concrete
 
         // Rental N
         public virtual ICollection<Rental>? Rentals { get; set; }
+
+        // CarImages N
+        public virtual ICollection<CarImage> Cars { get; set; }
 
         public short ModelYear { get; set; }
         public decimal DailyPrice { get; set; }

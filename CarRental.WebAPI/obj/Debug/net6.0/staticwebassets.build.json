@@ -1,11 +1,71 @@
 {
   "Version": 1,
-  "Hash": "p9FkVVWObKtIu/fEsiVAr8gKnk/2S+3AhM/xO8xEkok=",
+  "Hash": "z7ZcRqixw09MwaJzyfP364bALLzPMbtKqIKQ0KydI1g=",
   "Source": "CarRental.WebAPI",
   "BasePath": "_content/CarRental.WebAPI",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "CarRental.WebAPI\\wwwroot",
+      "Source": "CarRental.WebAPI",
+      "ContentRoot": "C:\\Users\\np_ba\\source\\repos\\ReCapProject\\CarRental.WebAPI\\wwwroot\\",
+      "BasePath": "_content/CarRental.WebAPI",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\np_ba\\source\\repos\\ReCapProject\\CarRental.WebAPI\\wwwroot\\desktop.ini",
+      "SourceId": "CarRental.WebAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\np_ba\\source\\repos\\ReCapProject\\CarRental.WebAPI\\wwwroot\\",
+      "BasePath": "_content/CarRental.WebAPI",
+      "RelativePath": "desktop.ini",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\desktop.ini"
+    },
+    {
+      "Identity": "C:\\Users\\np_ba\\source\\repos\\ReCapProject\\CarRental.WebAPI\\wwwroot\\images\\carImages\\70081535png_322_4_12_2_22_12_2022_.png",
+      "SourceId": "CarRental.WebAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\np_ba\\source\\repos\\ReCapProject\\CarRental.WebAPI\\wwwroot\\",
+      "BasePath": "_content/CarRental.WebAPI",
+      "RelativePath": "images/carImages/70081535png_322_4_12_2_22_12_2022_.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\carImages\\70081535png_322_4_12_2_22_12_2022_.png"
+    },
+    {
+      "Identity": "C:\\Users\\np_ba\\source\\repos\\ReCapProject\\CarRental.WebAPI\\wwwroot\\images\\carImages\\70081535png_719_9_10_2_22_12_2022_.png",
+      "SourceId": "CarRental.WebAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\np_ba\\source\\repos\\ReCapProject\\CarRental.WebAPI\\wwwroot\\",
+      "BasePath": "_content/CarRental.WebAPI",
+      "RelativePath": "images/carImages/70081535png_719_9_10_2_22_12_2022_.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\carImages\\70081535png_719_9_10_2_22_12_2022_.png"
+    }
+  ]
 }

@@ -7,10 +7,13 @@ using CarRental.DataAccess.Abstract;
 using CarRental.DataAccess.Concrete;
 using CarRental.DataAccess.Concrete.EntityFramework.Contexts;
 using CarRental.DataAccess.Concrete.EntityFramework.Repositories;
+using CarRental.WebAPI.Helpers.Abstract;
+using CarRental.WebAPI.Helpers.Concrete;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddScoped<IImageHelper, ImageHelper>();
 
 builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory())
     .ConfigureContainer<ContainerBuilder>(builder =>

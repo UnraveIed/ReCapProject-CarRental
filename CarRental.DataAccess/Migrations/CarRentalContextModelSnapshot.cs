@@ -70,11 +70,11 @@ namespace CarRental.DataAccess.Migrations
                         {
                             Id = 1,
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2022, 12, 16, 0, 13, 51, 591, DateTimeKind.Local).AddTicks(1608),
+                            CreatedDate = new DateTime(2022, 12, 21, 16, 28, 2, 802, DateTimeKind.Local).AddTicks(4863),
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2022, 12, 16, 0, 13, 51, 591, DateTimeKind.Local).AddTicks(1608),
+                            ModifiedDate = new DateTime(2022, 12, 21, 16, 28, 2, 802, DateTimeKind.Local).AddTicks(4864),
                             Name = "Mercedes",
                             Note = "Mercedes Markası"
                         },
@@ -82,11 +82,11 @@ namespace CarRental.DataAccess.Migrations
                         {
                             Id = 2,
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2022, 12, 16, 0, 13, 51, 591, DateTimeKind.Local).AddTicks(1611),
+                            CreatedDate = new DateTime(2022, 12, 21, 16, 28, 2, 802, DateTimeKind.Local).AddTicks(4867),
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2022, 12, 16, 0, 13, 51, 591, DateTimeKind.Local).AddTicks(1612),
+                            ModifiedDate = new DateTime(2022, 12, 21, 16, 28, 2, 802, DateTimeKind.Local).AddTicks(4868),
                             Name = "BMV",
                             Note = "BMV Markası"
                         },
@@ -94,11 +94,11 @@ namespace CarRental.DataAccess.Migrations
                         {
                             Id = 3,
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2022, 12, 16, 0, 13, 51, 591, DateTimeKind.Local).AddTicks(1614),
+                            CreatedDate = new DateTime(2022, 12, 21, 16, 28, 2, 802, DateTimeKind.Local).AddTicks(4874),
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2022, 12, 16, 0, 13, 51, 591, DateTimeKind.Local).AddTicks(1615),
+                            ModifiedDate = new DateTime(2022, 12, 21, 16, 28, 2, 802, DateTimeKind.Local).AddTicks(4874),
                             Name = "Lamborghini",
                             Note = "Lamborghini Markası"
                         },
@@ -106,11 +106,11 @@ namespace CarRental.DataAccess.Migrations
                         {
                             Id = 4,
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2022, 12, 16, 0, 13, 51, 591, DateTimeKind.Local).AddTicks(1616),
+                            CreatedDate = new DateTime(2022, 12, 21, 16, 28, 2, 802, DateTimeKind.Local).AddTicks(4877),
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2022, 12, 16, 0, 13, 51, 591, DateTimeKind.Local).AddTicks(1617),
+                            ModifiedDate = new DateTime(2022, 12, 21, 16, 28, 2, 802, DateTimeKind.Local).AddTicks(4877),
                             Name = "Ferrari",
                             Note = "Ferrari Markası"
                         },
@@ -118,11 +118,11 @@ namespace CarRental.DataAccess.Migrations
                         {
                             Id = 5,
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2022, 12, 16, 0, 13, 51, 591, DateTimeKind.Local).AddTicks(1619),
+                            CreatedDate = new DateTime(2022, 12, 21, 16, 28, 2, 802, DateTimeKind.Local).AddTicks(4879),
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2022, 12, 16, 0, 13, 51, 591, DateTimeKind.Local).AddTicks(1619),
+                            ModifiedDate = new DateTime(2022, 12, 21, 16, 28, 2, 802, DateTimeKind.Local).AddTicks(4880),
                             Name = "Opel",
                             Note = "Opel Markası"
                         },
@@ -130,11 +130,11 @@ namespace CarRental.DataAccess.Migrations
                         {
                             Id = 6,
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2022, 12, 16, 0, 13, 51, 591, DateTimeKind.Local).AddTicks(1621),
+                            CreatedDate = new DateTime(2022, 12, 21, 16, 28, 2, 802, DateTimeKind.Local).AddTicks(4882),
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2022, 12, 16, 0, 13, 51, 591, DateTimeKind.Local).AddTicks(1622),
+                            ModifiedDate = new DateTime(2022, 12, 21, 16, 28, 2, 802, DateTimeKind.Local).AddTicks(4882),
                             Name = "Peugeot",
                             Note = "Peugeot Markası"
                         },
@@ -142,11 +142,11 @@ namespace CarRental.DataAccess.Migrations
                         {
                             Id = 7,
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2022, 12, 16, 0, 13, 51, 591, DateTimeKind.Local).AddTicks(1624),
+                            CreatedDate = new DateTime(2022, 12, 21, 16, 28, 2, 802, DateTimeKind.Local).AddTicks(4884),
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2022, 12, 16, 0, 13, 51, 591, DateTimeKind.Local).AddTicks(1624),
+                            ModifiedDate = new DateTime(2022, 12, 21, 16, 28, 2, 802, DateTimeKind.Local).AddTicks(4885),
                             Name = "Koenigsegg",
                             Note = "Koenigsegg Markası"
                         },
@@ -154,11 +154,11 @@ namespace CarRental.DataAccess.Migrations
                         {
                             Id = 8,
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2022, 12, 16, 0, 13, 51, 591, DateTimeKind.Local).AddTicks(1626),
+                            CreatedDate = new DateTime(2022, 12, 21, 16, 28, 2, 802, DateTimeKind.Local).AddTicks(4892),
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2022, 12, 16, 0, 13, 51, 591, DateTimeKind.Local).AddTicks(1627),
+                            ModifiedDate = new DateTime(2022, 12, 21, 16, 28, 2, 802, DateTimeKind.Local).AddTicks(4893),
                             Name = "Aston Martin",
                             Note = "Aston Martin Markası"
                         },
@@ -166,11 +166,11 @@ namespace CarRental.DataAccess.Migrations
                         {
                             Id = 9,
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2022, 12, 16, 0, 13, 51, 591, DateTimeKind.Local).AddTicks(1629),
+                            CreatedDate = new DateTime(2022, 12, 21, 16, 28, 2, 802, DateTimeKind.Local).AddTicks(4895),
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2022, 12, 16, 0, 13, 51, 591, DateTimeKind.Local).AddTicks(1629),
+                            ModifiedDate = new DateTime(2022, 12, 21, 16, 28, 2, 802, DateTimeKind.Local).AddTicks(4895),
                             Name = "Porsche",
                             Note = "Porsche Markası"
                         },
@@ -178,11 +178,11 @@ namespace CarRental.DataAccess.Migrations
                         {
                             Id = 10,
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2022, 12, 16, 0, 13, 51, 591, DateTimeKind.Local).AddTicks(1631),
+                            CreatedDate = new DateTime(2022, 12, 21, 16, 28, 2, 802, DateTimeKind.Local).AddTicks(4897),
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2022, 12, 16, 0, 13, 51, 591, DateTimeKind.Local).AddTicks(1632),
+                            ModifiedDate = new DateTime(2022, 12, 21, 16, 28, 2, 802, DateTimeKind.Local).AddTicks(4898),
                             Name = "McLaren",
                             Note = "McLaren Markası"
                         },
@@ -190,11 +190,11 @@ namespace CarRental.DataAccess.Migrations
                         {
                             Id = 11,
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2022, 12, 16, 0, 13, 51, 591, DateTimeKind.Local).AddTicks(1633),
+                            CreatedDate = new DateTime(2022, 12, 21, 16, 28, 2, 802, DateTimeKind.Local).AddTicks(4900),
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2022, 12, 16, 0, 13, 51, 591, DateTimeKind.Local).AddTicks(1634),
+                            ModifiedDate = new DateTime(2022, 12, 21, 16, 28, 2, 802, DateTimeKind.Local).AddTicks(4900),
                             Name = "Ford",
                             Note = "Ford Markası"
                         });
@@ -265,14 +265,14 @@ namespace CarRental.DataAccess.Migrations
                             BrandId = 1,
                             ColorId = 1,
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2022, 12, 16, 0, 13, 51, 591, DateTimeKind.Local).AddTicks(5264),
+                            CreatedDate = new DateTime(2022, 12, 21, 16, 28, 2, 802, DateTimeKind.Local).AddTicks(8566),
                             DailyPrice = 950000.00m,
                             Description = "Iyi bir model 1",
                             IsActive = true,
                             IsDeleted = false,
                             ModelYear = (short)2019,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2022, 12, 16, 0, 13, 51, 591, DateTimeKind.Local).AddTicks(5265),
+                            ModifiedDate = new DateTime(2022, 12, 21, 16, 28, 2, 802, DateTimeKind.Local).AddTicks(8567),
                             Note = "1. Araba"
                         },
                         new
@@ -281,14 +281,14 @@ namespace CarRental.DataAccess.Migrations
                             BrandId = 2,
                             ColorId = 2,
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2022, 12, 16, 0, 13, 51, 591, DateTimeKind.Local).AddTicks(5270),
+                            CreatedDate = new DateTime(2022, 12, 21, 16, 28, 2, 802, DateTimeKind.Local).AddTicks(8570),
                             DailyPrice = 850000.00m,
                             Description = "Iyi bir model 2",
                             IsActive = true,
                             IsDeleted = false,
                             ModelYear = (short)2017,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2022, 12, 16, 0, 13, 51, 591, DateTimeKind.Local).AddTicks(5271),
+                            ModifiedDate = new DateTime(2022, 12, 21, 16, 28, 2, 802, DateTimeKind.Local).AddTicks(8571),
                             Note = "2. Araba"
                         },
                         new
@@ -297,14 +297,14 @@ namespace CarRental.DataAccess.Migrations
                             BrandId = 3,
                             ColorId = 3,
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2022, 12, 16, 0, 13, 51, 591, DateTimeKind.Local).AddTicks(5273),
+                            CreatedDate = new DateTime(2022, 12, 21, 16, 28, 2, 802, DateTimeKind.Local).AddTicks(8574),
                             DailyPrice = 1000000.00m,
                             Description = "Iyi bir model 3",
                             IsActive = true,
                             IsDeleted = false,
                             ModelYear = (short)2021,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2022, 12, 16, 0, 13, 51, 591, DateTimeKind.Local).AddTicks(5274),
+                            ModifiedDate = new DateTime(2022, 12, 21, 16, 28, 2, 802, DateTimeKind.Local).AddTicks(8574),
                             Note = "3. Araba"
                         },
                         new
@@ -313,14 +313,14 @@ namespace CarRental.DataAccess.Migrations
                             BrandId = 4,
                             ColorId = 1,
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2022, 12, 16, 0, 13, 51, 591, DateTimeKind.Local).AddTicks(5277),
+                            CreatedDate = new DateTime(2022, 12, 21, 16, 28, 2, 802, DateTimeKind.Local).AddTicks(8578),
                             DailyPrice = 980000.00m,
                             Description = "Iyi bir model 4",
                             IsActive = true,
                             IsDeleted = false,
                             ModelYear = (short)2020,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2022, 12, 16, 0, 13, 51, 591, DateTimeKind.Local).AddTicks(5278),
+                            ModifiedDate = new DateTime(2022, 12, 21, 16, 28, 2, 802, DateTimeKind.Local).AddTicks(8579),
                             Note = "4. Araba"
                         },
                         new
@@ -329,14 +329,14 @@ namespace CarRental.DataAccess.Migrations
                             BrandId = 5,
                             ColorId = 2,
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2022, 12, 16, 0, 13, 51, 591, DateTimeKind.Local).AddTicks(5280),
+                            CreatedDate = new DateTime(2022, 12, 21, 16, 28, 2, 802, DateTimeKind.Local).AddTicks(8581),
                             DailyPrice = 150000.00m,
                             Description = "Iyi bir model 5",
                             IsActive = true,
                             IsDeleted = false,
                             ModelYear = (short)2014,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2022, 12, 16, 0, 13, 51, 591, DateTimeKind.Local).AddTicks(5281),
+                            ModifiedDate = new DateTime(2022, 12, 21, 16, 28, 2, 802, DateTimeKind.Local).AddTicks(8582),
                             Note = "5. Araba"
                         },
                         new
@@ -345,16 +345,61 @@ namespace CarRental.DataAccess.Migrations
                             BrandId = 6,
                             ColorId = 3,
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2022, 12, 16, 0, 13, 51, 591, DateTimeKind.Local).AddTicks(5284),
+                            CreatedDate = new DateTime(2022, 12, 21, 16, 28, 2, 802, DateTimeKind.Local).AddTicks(8585),
                             DailyPrice = 250000.00m,
                             Description = "Iyi bir model 6",
                             IsActive = true,
                             IsDeleted = false,
                             ModelYear = (short)2021,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2022, 12, 16, 0, 13, 51, 591, DateTimeKind.Local).AddTicks(5284),
+                            ModifiedDate = new DateTime(2022, 12, 21, 16, 28, 2, 802, DateTimeKind.Local).AddTicks(8585),
                             Note = "6. Araba"
                         });
+                });
+
+            modelBuilder.Entity("CarRental.Entities.Concrete.CarImage", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("CarId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("CreatedByName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ImagePath")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("ModifiedByName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("ModifiedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Note")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CarId");
+
+                    b.ToTable("CarImages");
                 });
 
             modelBuilder.Entity("CarRental.Entities.Concrete.Color", b =>
@@ -405,11 +450,11 @@ namespace CarRental.DataAccess.Migrations
                         {
                             Id = 1,
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2022, 12, 16, 0, 13, 51, 591, DateTimeKind.Local).AddTicks(2660),
+                            CreatedDate = new DateTime(2022, 12, 21, 16, 28, 2, 802, DateTimeKind.Local).AddTicks(5914),
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2022, 12, 16, 0, 13, 51, 591, DateTimeKind.Local).AddTicks(2660),
+                            ModifiedDate = new DateTime(2022, 12, 21, 16, 28, 2, 802, DateTimeKind.Local).AddTicks(5915),
                             Name = "Sarı",
                             Note = "Sarı Rengi"
                         },
@@ -417,11 +462,11 @@ namespace CarRental.DataAccess.Migrations
                         {
                             Id = 2,
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2022, 12, 16, 0, 13, 51, 591, DateTimeKind.Local).AddTicks(2663),
+                            CreatedDate = new DateTime(2022, 12, 21, 16, 28, 2, 802, DateTimeKind.Local).AddTicks(5917),
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2022, 12, 16, 0, 13, 51, 591, DateTimeKind.Local).AddTicks(2663),
+                            ModifiedDate = new DateTime(2022, 12, 21, 16, 28, 2, 802, DateTimeKind.Local).AddTicks(5918),
                             Name = "Kırmızı",
                             Note = "Kırmızı Rengi"
                         },
@@ -429,11 +474,11 @@ namespace CarRental.DataAccess.Migrations
                         {
                             Id = 3,
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2022, 12, 16, 0, 13, 51, 591, DateTimeKind.Local).AddTicks(2665),
+                            CreatedDate = new DateTime(2022, 12, 21, 16, 28, 2, 802, DateTimeKind.Local).AddTicks(5920),
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2022, 12, 16, 0, 13, 51, 591, DateTimeKind.Local).AddTicks(2666),
+                            ModifiedDate = new DateTime(2022, 12, 21, 16, 28, 2, 802, DateTimeKind.Local).AddTicks(5921),
                             Name = "Mavi",
                             Note = "Mavi Rengi"
                         });
@@ -493,11 +538,11 @@ namespace CarRental.DataAccess.Migrations
                             Id = 1,
                             CompanyName = "AE Yazılım",
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2022, 12, 16, 0, 13, 51, 591, DateTimeKind.Local).AddTicks(6994),
+                            CreatedDate = new DateTime(2022, 12, 21, 16, 28, 2, 803, DateTimeKind.Local).AddTicks(259),
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2022, 12, 16, 0, 13, 51, 591, DateTimeKind.Local).AddTicks(6995),
+                            ModifiedDate = new DateTime(2022, 12, 21, 16, 28, 2, 803, DateTimeKind.Local).AddTicks(260),
                             Note = "1. Musteri",
                             UserId = 1
                         },
@@ -506,11 +551,11 @@ namespace CarRental.DataAccess.Migrations
                             Id = 2,
                             CompanyName = "Selçuk Üniversitesi",
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2022, 12, 16, 0, 13, 51, 591, DateTimeKind.Local).AddTicks(6997),
+                            CreatedDate = new DateTime(2022, 12, 21, 16, 28, 2, 803, DateTimeKind.Local).AddTicks(263),
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2022, 12, 16, 0, 13, 51, 591, DateTimeKind.Local).AddTicks(6998),
+                            ModifiedDate = new DateTime(2022, 12, 21, 16, 28, 2, 803, DateTimeKind.Local).AddTicks(263),
                             Note = "2. Musteri",
                             UserId = 3
                         });
@@ -576,30 +621,30 @@ namespace CarRental.DataAccess.Migrations
                             Id = 1,
                             CarId = 5,
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2022, 12, 16, 0, 13, 51, 591, DateTimeKind.Local).AddTicks(8974),
+                            CreatedDate = new DateTime(2022, 12, 21, 16, 28, 2, 803, DateTimeKind.Local).AddTicks(2491),
                             CustomerId = 1,
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2022, 12, 16, 0, 13, 51, 591, DateTimeKind.Local).AddTicks(8975),
+                            ModifiedDate = new DateTime(2022, 12, 21, 16, 28, 2, 803, DateTimeKind.Local).AddTicks(2492),
                             Note = "Ilk kira",
-                            RentDate = new DateTime(2022, 12, 16, 0, 0, 0, 0, DateTimeKind.Local),
-                            ReturnDate = new DateTime(2022, 12, 21, 0, 0, 0, 0, DateTimeKind.Local)
+                            RentDate = new DateTime(2022, 12, 21, 0, 0, 0, 0, DateTimeKind.Local),
+                            ReturnDate = new DateTime(2022, 12, 26, 0, 0, 0, 0, DateTimeKind.Local)
                         },
                         new
                         {
                             Id = 2,
-                            CarId = 7,
+                            CarId = 6,
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2022, 12, 16, 0, 13, 51, 591, DateTimeKind.Local).AddTicks(8979),
+                            CreatedDate = new DateTime(2022, 12, 21, 16, 28, 2, 803, DateTimeKind.Local).AddTicks(2496),
                             CustomerId = 2,
                             IsActive = true,
                             IsDeleted = false,
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2022, 12, 16, 0, 13, 51, 591, DateTimeKind.Local).AddTicks(8979),
+                            ModifiedDate = new DateTime(2022, 12, 21, 16, 28, 2, 803, DateTimeKind.Local).AddTicks(2496),
                             Note = "2. kira",
-                            RentDate = new DateTime(2022, 12, 16, 0, 0, 0, 0, DateTimeKind.Local),
-                            ReturnDate = new DateTime(2022, 12, 18, 0, 0, 0, 0, DateTimeKind.Local)
+                            RentDate = new DateTime(2022, 12, 21, 0, 0, 0, 0, DateTimeKind.Local),
+                            ReturnDate = new DateTime(2022, 12, 23, 0, 0, 0, 0, DateTimeKind.Local)
                         });
                 });
 
@@ -665,14 +710,14 @@ namespace CarRental.DataAccess.Migrations
                         {
                             Id = 1,
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2022, 12, 16, 0, 13, 51, 591, DateTimeKind.Local).AddTicks(6173),
+                            CreatedDate = new DateTime(2022, 12, 21, 16, 28, 2, 802, DateTimeKind.Local).AddTicks(9512),
                             Email = "batu@inal.com",
                             FirstName = "Batuhan",
                             IsActive = true,
                             IsDeleted = false,
                             LastName = "İnal",
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2022, 12, 16, 0, 13, 51, 591, DateTimeKind.Local).AddTicks(6174),
+                            ModifiedDate = new DateTime(2022, 12, 21, 16, 28, 2, 802, DateTimeKind.Local).AddTicks(9513),
                             Note = "User data seed",
                             Password = "12345"
                         },
@@ -680,14 +725,14 @@ namespace CarRental.DataAccess.Migrations
                         {
                             Id = 2,
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2022, 12, 16, 0, 13, 51, 591, DateTimeKind.Local).AddTicks(6176),
+                            CreatedDate = new DateTime(2022, 12, 21, 16, 28, 2, 802, DateTimeKind.Local).AddTicks(9516),
                             Email = "samet@inal.com",
                             FirstName = "Samet",
                             IsActive = true,
                             IsDeleted = false,
                             LastName = "İnal",
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2022, 12, 16, 0, 13, 51, 591, DateTimeKind.Local).AddTicks(6177),
+                            ModifiedDate = new DateTime(2022, 12, 21, 16, 28, 2, 802, DateTimeKind.Local).AddTicks(9517),
                             Note = "User data seed",
                             Password = "12345"
                         },
@@ -695,14 +740,14 @@ namespace CarRental.DataAccess.Migrations
                         {
                             Id = 3,
                             CreatedByName = "InitialCreate",
-                            CreatedDate = new DateTime(2022, 12, 16, 0, 13, 51, 591, DateTimeKind.Local).AddTicks(6180),
+                            CreatedDate = new DateTime(2022, 12, 21, 16, 28, 2, 802, DateTimeKind.Local).AddTicks(9519),
                             Email = "Ilknur@inal.com",
                             FirstName = "Ilknur",
                             IsActive = true,
                             IsDeleted = false,
                             LastName = "İnal",
                             ModifiedByName = "InitialCreate",
-                            ModifiedDate = new DateTime(2022, 12, 16, 0, 13, 51, 591, DateTimeKind.Local).AddTicks(6180),
+                            ModifiedDate = new DateTime(2022, 12, 21, 16, 28, 2, 802, DateTimeKind.Local).AddTicks(9520),
                             Note = "User data seed",
                             Password = "12345"
                         });
@@ -725,6 +770,17 @@ namespace CarRental.DataAccess.Migrations
                     b.Navigation("Brand");
 
                     b.Navigation("Color");
+                });
+
+            modelBuilder.Entity("CarRental.Entities.Concrete.CarImage", b =>
+                {
+                    b.HasOne("CarRental.Entities.Concrete.Car", "Car")
+                        .WithMany("Cars")
+                        .HasForeignKey("CarId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Car");
                 });
 
             modelBuilder.Entity("CarRental.Entities.Concrete.Customer", b =>
@@ -764,6 +820,8 @@ namespace CarRental.DataAccess.Migrations
 
             modelBuilder.Entity("CarRental.Entities.Concrete.Car", b =>
                 {
+                    b.Navigation("Cars");
+
                     b.Navigation("Rentals");
                 });
 
