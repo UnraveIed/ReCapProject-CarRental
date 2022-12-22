@@ -3,7 +3,6 @@ using CarRental.Entities.Concrete;
 using CarRental.Entities.Dtos;
 using CarRental.WebAPI.Helpers.Abstract;
 using Core.Utilities.Results.Abstract;
-using Core.Utilities.Results.Concrete;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CarRental.WebAPI.Controllers
@@ -59,7 +58,7 @@ namespace CarRental.WebAPI.Controllers
         [HttpPost("add")]
         public async Task<IActionResult> Add([FromForm] CarImageUploadDto model)
         {
-            var imageResult = await _imageHelper.UploadAsync(model.ImageFile, Entities.ComplexTypes.PictureType.CarImage, null, model.ImageFile.FileName);
+            var imageResult = await _imageHelper.UploadAsync(model.ImageFile, Entities.ComplexTypes.PictureType.CarImage);
             if (imageResult.IsSuccess)
             {
                 var addedCarImage = await _carImageService.AddAsync(new CarImage
@@ -110,23 +109,23 @@ namespace CarRental.WebAPI.Controllers
         public async Task<IActionResult> Delete(int carImageId)
         {
             var carImage = await _carImageService.GetById(carImageId);
-            Core.Utilities.Results.Abstract.IResult result;
-            if (carImage.Data.ImagePath != null)
-            {
-                var deleteImage = _imageHelper.Delete(carImage.Data.ImagePath);
-                if (deleteImage.IsSuccess)
-                {
-                    result = await _carImageService.HardDeleteAsync(carImage.Data);
-                    if (result.IsSuccess)
-                    {
-                        return Ok(result);
-                    }
-                    return BadRequest(result);
-                }
-                return BadRequest(deleteImage);
-            }
+            Core.Utilities.Results.Abstract.IResult result;        
             if (carImage.IsSuccess)
             {
+                if (carImage.Data.ImagePath != null)
+                {
+                    var deleteImage = _imageHelper.Delete(carImage.Data.ImagePath);
+                    if (deleteImage.IsSuccess)
+                    {
+                        result = await _carImageService.HardDeleteAsync(carImage.Data);
+                        if (result.IsSuccess)
+                        {
+                            return Ok(result);
+                        }
+                        return BadRequest(result);
+                    }
+                    return BadRequest(deleteImage);
+                }
                 result = await _carImageService.HardDeleteAsync(carImage.Data);
                 if (result.IsSuccess)
                 {

@@ -49,7 +49,7 @@ namespace CarRental.WebAPI.Helpers.Concrete
 
             IsDirectoryExist(folderName);
 
-            fileName ??= Path.GetFileNameWithoutExtension(pictureFile.Name);
+            fileName ??= Path.GetFileNameWithoutExtension(pictureFile.FileName);
 
             string fileExtension = Path.GetExtension(pictureFile.FileName);
 
