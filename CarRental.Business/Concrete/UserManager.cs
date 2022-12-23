@@ -3,9 +3,9 @@ using CarRental.Business.Constants;
 using CarRental.Business.ValidationRules.FluentValidation;
 using CarRental.DataAccess.Abstract;
 using CarRental.DataAccess.Concrete;
-using CarRental.Entities.Concrete;
 using Core.Aspects.Autofac.Validation;
 using Core.Entities.Abstract;
+using Core.Entities.Concrete;
 using Core.Utilities.Results.Abstract;
 using Core.Utilities.Results.Concrete;
 using System;
@@ -27,42 +27,32 @@ namespace CarRental.Business.Concrete
             _userRepository = userRepository;
         }
 
-        [ValidationAspect(typeof(UserValidator))]
-        public async Task<IDataResult<User>> AddAsync(User entity)
+        public async Task<IDataResult<User>> AddAsync(User user)
         {
-            var addedUser = await _userRepository.AddAsync(entity);
-            return new SuccessDataResult<User>(addedUser, Messages.UserAdded);
-        }
-
-        public async Task<IResult> HardDeleteAsync(User entity)
-        {
-            await _userRepository.DeleteAsync(entity);
-            return new SuccessResult(Messages.UserDeleted);
-        }
-
-        public async Task<IDataResult<IList<User>>> GetAllAsync()
-        {
-            var list = await _userRepository.GetAllAsync();
-            return new SuccessDataResult<IList<User>>(list, Messages.UserAdded);
-        }
-
-        public async Task<IDataResult<User>> GetByIdAsync(int userId)
-        {
-            List<Expression<Func<User, bool>>> predicates = new();
-            predicates.Add(x => x.Id == userId);
-            var user = await _userRepository.GetAsync(predicates);
-            if (user == null)
+            var addedUser = await _userRepository.AddAsync(user);
+            if (addedUser != null)
             {
-                return new ErrorDataResult<User>(Messages.UsersNotFound);
+                return new SuccessDataResult<User>(addedUser);
             }
-            return new SuccessDataResult<User>(user);
+            return new ErrorDataResult<User>();
         }
 
-        public async Task<IDataResult<User>> UpdateAsync(User entity)
+        public async Task<IDataResult<User>> GetByMailAsync(string email)
         {
-            var updatedUser = await _userRepository.UpdateAsync(entity);
-            return new SuccessDataResult<User>(updatedUser, Messages.UserUpdated);
+            var user = await _userRepository.GetAsync(x => x.Email == email);
+            if (user != null)
+            {
+                return new SuccessDataResult<User>(user);
+            }
+            return new ErrorDataResult<User>();
         }
+
+        public IDataResult<List<OperationClaim>> GetClaims(User user)
+        {
+            return new SuccessDataResult<List<OperationClaim>>(_userRepository.GetClaims(user));
+        }
+
+
 
         #region UnitOfWork
         //public UserManager(IUnitOfWork unitOfWork) : base(unitOfWork)

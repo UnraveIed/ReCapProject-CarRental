@@ -1,4 +1,4 @@
-﻿using CarRental.Entities.Concrete;
+﻿using Core.Entities.Concrete;
 using FluentValidation;
 using System;
 using System.Collections.Generic;

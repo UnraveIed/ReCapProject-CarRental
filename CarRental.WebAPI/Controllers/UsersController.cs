@@ -1,5 +1,5 @@
 ﻿using CarRental.Business.Abstract;
-using CarRental.Entities.Concrete;
+using Core.Entities.Concrete;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 

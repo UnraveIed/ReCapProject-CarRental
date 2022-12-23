@@ -8,6 +8,8 @@ using CarRental.DataAccess.Concrete.EntityFramework.Contexts;
 using CarRental.DataAccess.Concrete.EntityFramework.Repositories;
 using Castle.DynamicProxy;
 using Core.Utilities.Interceptors;
+using Core.Utilities.Security.Jwt.Abstract;
+using Core.Utilities.Security.Jwt.Concrete;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -42,6 +44,9 @@ namespace CarRental.Business.DependencyResolvers.Autofac
 
             builder.RegisterType<UserManager>().As<IUserService>().SingleInstance();
             builder.RegisterType<EfUserRepository>().As<IUserRepository>().SingleInstance();
+
+            builder.RegisterType<AuthManager>().As<IAuthService>();
+            builder.RegisterType<JwtHelper>().As<ITokenHelper>();
 
             builder.RegisterType<CarImageManager>().As<ICarImageService>().SingleInstance();
             builder.RegisterType<EfCarImageRepository>().As<ICarImageRepository>().SingleInstance();

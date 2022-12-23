@@ -68,3 +68,5 @@ C:\Users\np_ba\source\repos\ReCapProject\CarRental.ConsoleUI\bin\Debug\net6.0\Ca
 C:\Users\np_ba\source\repos\ReCapProject\CarRental.ConsoleUI\bin\Debug\net6.0\FluentValidation.dll
 C:\Users\np_ba\source\repos\ReCapProject\CarRental.ConsoleUI\bin\Debug\net6.0\Microsoft.AspNetCore.Http.Features.dll
 C:\Users\np_ba\source\repos\ReCapProject\CarRental.ConsoleUI\bin\Debug\net6.0\System.IO.Pipelines.dll
+C:\Users\np_ba\source\repos\ReCapProject\CarRental.ConsoleUI\bin\Debug\net6.0\Microsoft.AspNetCore.Http.Abstractions.dll
+C:\Users\np_ba\source\repos\ReCapProject\CarRental.ConsoleUI\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Binder.dll

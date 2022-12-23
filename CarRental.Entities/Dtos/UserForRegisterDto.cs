@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CarRental.Entities.Concrete
+namespace CarRental.Entities.Dtos
 {
-    public class User : EntityBase
+    public class UserForRegisterDto : IDto
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }

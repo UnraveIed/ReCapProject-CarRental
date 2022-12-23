@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "4vXpkoEc0ojF5rWTn46/E9+qkUYLRtHrerI9MHZUsFQ=",
+  "Hash": "S9LNqcnSbJjX013MtVlkSDih6/c2eoLV8C77qsyV5R8=",
   "Source": "CarRental.WebAPI",
   "BasePath": "_content/CarRental.WebAPI",
   "Mode": "Default",
@@ -34,12 +34,12 @@
       "OriginalItemSpec": "wwwroot\\desktop.ini"
     },
     {
-      "Identity": "C:\\Users\\np_ba\\source\\repos\\ReCapProject\\CarRental.WebAPI\\wwwroot\\images\\carImages\\tssdpng_319_17_55_15_22_12_2022_.png",
+      "Identity": "C:\\Users\\np_ba\\source\\repos\\ReCapProject\\CarRental.WebAPI\\wwwroot\\images\\carImages\\tssd_79_57_56_15_22_12_2022_.png",
       "SourceId": "CarRental.WebAPI",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\np_ba\\source\\repos\\ReCapProject\\CarRental.WebAPI\\wwwroot\\",
       "BasePath": "_content/CarRental.WebAPI",
-      "RelativePath": "images/carImages/tssdpng_319_17_55_15_22_12_2022_.png",
+      "RelativePath": "images/carImages/tssd_79_57_56_15_22_12_2022_.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -48,7 +48,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\carImages\\tssdpng_319_17_55_15_22_12_2022_.png"
+      "OriginalItemSpec": "wwwroot\\images\\carImages\\tssd_79_57_56_15_22_12_2022_.png"
     }
   ]
 }

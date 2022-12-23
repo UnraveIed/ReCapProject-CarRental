@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -18,5 +19,6 @@ namespace CarRental.Business.Constants
         public static string ImageLimitExceeded = "Araca kayıtlı resim sayısını aşmış bulunmaktasınız.";
         public static string DefaultCarImage = "Araca kayıtlı bir resim bulunamadığı için default resim görüntülenmektedir.";
         public static string NotFound = "Kayitli bir veri bulunamadi.";
+        public static string AuthorizationDenied = "Bu işleme yetkiniz bulunmamaktadır.";
     }
 }

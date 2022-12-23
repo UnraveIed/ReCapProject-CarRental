@@ -72,3 +72,6 @@ C:\Users\np_ba\source\repos\ReCapProject\CarRental.WebAPI\bin\Debug\net6.0\Castl
 C:\Users\np_ba\source\repos\ReCapProject\CarRental.WebAPI\obj\Debug\net6.0\CarRental.WebAPI.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\np_ba\source\repos\ReCapProject\CarRental.WebAPI\bin\Debug\net6.0\FluentValidation.dll
 C:\Users\np_ba\source\repos\ReCapProject\CarRental.WebAPI\bin\Debug\net6.0\CarRental.WebAPI.staticwebassets.runtime.json
+C:\Users\np_ba\source\repos\ReCapProject\CarRental.WebAPI\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\np_ba\source\repos\ReCapProject\CarRental.WebAPI\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Binder.dll
+C:\Users\np_ba\source\repos\ReCapProject\CarRental.WebAPI\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
