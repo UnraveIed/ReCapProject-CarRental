@@ -1,4 +1,5 @@
 ﻿using CarRental.Business.Abstract;
+using CarRental.Business.BusinessAspects.Autofac;
 using CarRental.Business.Constants;
 using CarRental.Business.ValidationRules.FluentValidation;
 using CarRental.DataAccess.Abstract;
@@ -6,6 +7,7 @@ using CarRental.DataAccess.Concrete;
 using Core.Aspects.Autofac.Validation;
 using Core.Entities.Abstract;
 using Core.Entities.Concrete;
+using Core.Utilities.Business;
 using Core.Utilities.Results.Abstract;
 using Core.Utilities.Results.Concrete;
 using System;
@@ -27,6 +29,7 @@ namespace CarRental.Business.Concrete
             _userRepository = userRepository;
         }
 
+        [SecuredOperationAspect("admin")]
         public async Task<IDataResult<User>> AddAsync(User user)
         {
             var addedUser = await _userRepository.AddAsync(user);
@@ -35,6 +38,26 @@ namespace CarRental.Business.Concrete
                 return new SuccessDataResult<User>(addedUser);
             }
             return new ErrorDataResult<User>();
+        }
+
+        public async Task<IDataResult<IList<User>>> GetAllAsync()
+        {
+            var users = await _userRepository.GetAllAsync();
+            if (users.Count > 0)
+            {
+                return new SuccessDataResult<IList<User>>(users, Messages.UsersListed);
+            }
+            return new ErrorDataResult<IList<User>>(Messages.UsersNotFound);
+        }
+
+        public async Task<IDataResult<User>> GetByIdAsync(int userId)
+        {
+            var user = await _userRepository.GetAsync(x => x.Id == userId);
+            if (user != null)
+            {
+                return new SuccessDataResult<User>(user); 
+            }
+            return new ErrorDataResult<User>(Messages.UsersNotFound);
         }
 
         public async Task<IDataResult<User>> GetByMailAsync(string email)
@@ -50,6 +73,36 @@ namespace CarRental.Business.Concrete
         public IDataResult<List<OperationClaim>> GetClaims(User user)
         {
             return new SuccessDataResult<List<OperationClaim>>(_userRepository.GetClaims(user));
+        }
+
+
+        [SecuredOperationAspect("admin")]
+        public async Task<IResult> HardDeleteAsync(User entity)
+        {
+            await _userRepository.DeleteAsync(entity);
+            return new SuccessResult(Messages.UserDeleted);
+        }
+
+        [SecuredOperationAspect("admin")]
+        public async Task<IDataResult<User>> UpdateAsync(User entity)
+        {
+            var results = BusinessRules.Run(await IsUserExists(entity.Id));
+            if (results != null)
+            {
+                return new ErrorDataResult<User>(Messages.UsersNotFound);
+            }
+            var updatedUser = await _userRepository.UpdateAsync(entity);
+            return new SuccessDataResult<User>(updatedUser);
+        }
+
+        private async Task<IResult> IsUserExists(int userId)
+        {
+            var result = await _userRepository.AnyAsync(x => x.Id == userId);
+            if (result)
+            {
+                return new SuccessResult();
+            }
+            return new ErrorResult();
         }
 
 

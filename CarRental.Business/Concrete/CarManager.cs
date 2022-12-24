@@ -1,4 +1,5 @@
 ﻿using CarRental.Business.Abstract;
+using CarRental.Business.Constants;
 using CarRental.Business.ValidationRules.FluentValidation;
 using CarRental.DataAccess.Abstract;
 using CarRental.Entities.Concrete;
@@ -50,7 +51,7 @@ namespace CarRental.Business.Concrete
             var car = await _carRepository.GetAsync(predicates);
             if (car == null)
             {
-                new ErrorDataResult<Car>("Verilen parametrede bir araba bulunamadı.");
+                new ErrorDataResult<Car>(Messages.CarNotFound);
             }
             return new SuccessDataResult<Car>(car);
         }

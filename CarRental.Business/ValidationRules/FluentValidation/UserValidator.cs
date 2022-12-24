@@ -27,10 +27,10 @@ namespace CarRental.Business.ValidationRules.FluentValidation
                 .EmailAddress()
                 .MinimumLength(5);
 
-            RuleFor(x => x.Password)
-                .NotEmpty()
-                .MinimumLength(5)
-                .MaximumLength(35);
+            //RuleFor(x => x.Password)
+            //    .NotEmpty()
+            //    .MinimumLength(5)
+            //    .MaximumLength(35);
         }
     }
 }

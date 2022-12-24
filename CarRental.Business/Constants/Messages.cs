@@ -20,5 +20,7 @@ namespace CarRental.Business.Constants
         public static string DefaultCarImage = "Araca kayıtlı bir resim bulunamadığı için default resim görüntülenmektedir.";
         public static string NotFound = "Kayitli bir veri bulunamadi.";
         public static string AuthorizationDenied = "Bu işleme yetkiniz bulunmamaktadır.";
+        public static string EmailAlreadyExists = "Bu mail adresinde zaten bir kullanıcı bulunmaktadır.";
+        public static string CarNotFound = "Verilen parametrede bir araç bulunamadı.";
     }
 }

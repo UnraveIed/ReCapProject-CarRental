@@ -75,3 +75,4 @@ C:\Users\np_ba\source\repos\ReCapProject\CarRental.WebAPI\bin\Debug\net6.0\CarRe
 C:\Users\np_ba\source\repos\ReCapProject\CarRental.WebAPI\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
 C:\Users\np_ba\source\repos\ReCapProject\CarRental.WebAPI\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Binder.dll
 C:\Users\np_ba\source\repos\ReCapProject\CarRental.WebAPI\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+C:\Users\np_ba\source\repos\ReCapProject\CarRental.WebAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

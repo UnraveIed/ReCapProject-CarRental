@@ -1,4 +1,5 @@
 ﻿using CarRental.Business.Abstract;
+using CarRental.Business.BusinessAspects.Autofac;
 using CarRental.Business.ValidationRules.FluentValidation;
 using CarRental.DataAccess.Abstract;
 using CarRental.DataAccess.Concrete;
@@ -25,6 +26,7 @@ namespace CarRental.Business.Concrete
             _brandRepository = brandRepository;
         }
 
+        [SecuredOperationAspect("admin")]
         [ValidationAspect(typeof(BrandValidator))]
         public async Task<IDataResult<Brand>> AddAsync(Brand entity)
         {
@@ -32,6 +34,7 @@ namespace CarRental.Business.Concrete
             return new SuccessDataResult<Brand>(addedBrand);
         }
 
+        [SecuredOperationAspect("admin")]
         public async Task<IResult> HardDeleteAsync(Brand entity)
         {
             await _brandRepository.DeleteAsync(entity);

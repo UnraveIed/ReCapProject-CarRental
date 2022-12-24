@@ -1,4 +1,5 @@
 ﻿using Core.Entities.Concrete;
+using Core.Utilities.Security.Hashing;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
@@ -19,8 +20,11 @@ namespace CarRental.DataAccess.Concrete.EntityFramework.Mappings
             builder.Property(x => x.Email).IsRequired();
             builder.Property(x => x.Email).HasMaxLength(75);
 
-            builder.Property(x=>x.Password).IsRequired();
-            builder.Property(x => x.Password).HasMaxLength(50);
+            builder.Property(x=>x.PasswordHash).IsRequired();
+            builder.Property(c => c.PasswordHash).HasColumnType("VARBINARY(500)");
+
+            builder.Property(x => x.PasswordSalt).IsRequired();
+            builder.Property(c => c.PasswordSalt).HasColumnType("VARBINARY(500)");
 
             builder.Property(x => x.FirstName).IsRequired();
             builder.Property(x => x.FirstName).HasMaxLength(50);
@@ -38,6 +42,9 @@ namespace CarRental.DataAccess.Concrete.EntityFramework.Mappings
             builder.Property(b => b.IsDeleted).IsRequired();
             builder.Property(a => a.Note).HasMaxLength(500);
 
+            byte[] passwordHash, passwordSalt;
+            HashingHelper.CreatePasswordHash("12345", out passwordHash, out passwordSalt);
+
             builder.HasData(
                     new User
                     {
@@ -45,7 +52,8 @@ namespace CarRental.DataAccess.Concrete.EntityFramework.Mappings
                         FirstName = "Batuhan",
                         LastName = "İnal",
                         Email = "batu@inal.com",
-                        Password = "12345",
+                        PasswordHash = passwordHash,
+                        PasswordSalt = passwordSalt,
                         IsActive = true,
                         IsDeleted = false,
                         CreatedByName = "InitialCreate",
@@ -60,7 +68,8 @@ namespace CarRental.DataAccess.Concrete.EntityFramework.Mappings
                         FirstName = "Samet",
                         LastName = "İnal",
                         Email = "samet@inal.com",
-                        Password = "12345",
+                        PasswordHash = passwordHash,
+                        PasswordSalt = passwordSalt,
                         IsActive = true,
                         IsDeleted = false,
                         CreatedByName = "InitialCreate",
@@ -74,8 +83,9 @@ namespace CarRental.DataAccess.Concrete.EntityFramework.Mappings
                         Id = 3,
                         FirstName = "Ilknur",
                         LastName = "İnal",
-                        Email = "Ilknur@inal.com",
-                        Password = "12345",
+                        Email = "ilknur@inal.com",
+                        PasswordHash = passwordHash,
+                        PasswordSalt = passwordSalt,
                         IsActive = true,
                         IsDeleted = false,
                         CreatedByName = "InitialCreate",

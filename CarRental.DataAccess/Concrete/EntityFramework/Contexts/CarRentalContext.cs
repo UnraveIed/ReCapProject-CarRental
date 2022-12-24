@@ -28,9 +28,11 @@ namespace CarRental.DataAccess.Concrete.EntityFramework.Contexts
             modelBuilder.ApplyConfiguration(new BrandMap());
             modelBuilder.ApplyConfiguration(new ColorMap());
             modelBuilder.ApplyConfiguration(new CarMap());
-            modelBuilder.ApplyConfiguration(new UserMap());
             modelBuilder.ApplyConfiguration(new CustomerMap());
             modelBuilder.ApplyConfiguration(new RentalMap());
+            modelBuilder.ApplyConfiguration(new UserMap());
+            modelBuilder.ApplyConfiguration(new OperationClaimMap());
+            modelBuilder.ApplyConfiguration(new UserOperationClaimMap());
             //modelBuilder.Entity<Customer>(c =>
             //{
             //    c.ToTable("Customers").HasKey(c => c.Id);

@@ -13,7 +13,6 @@ namespace CarRental.Business.Abstract
     {
         Task<IDataResult<User>> RegisterAsync(UserForRegisterDto userForRegisterDto);
         Task<IDataResult<User>> LoginAsync(UserForLoginDto userForLoginDto);
-        Task<IResult> UserExistsAsync(string email);
         IDataResult<AccessToken> CreateAccessToken(User user);
     }
 }

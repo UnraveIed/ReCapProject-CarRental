@@ -1,6 +1,8 @@
 ﻿using CarRental.Business.Abstract;
+using CarRental.Business.Constants;
 using CarRental.Entities.Dtos;
 using Core.Entities.Concrete;
+using Core.Utilities.Business;
 using Core.Utilities.Results.Abstract;
 using Core.Utilities.Results.Concrete;
 using Core.Utilities.Security.Hashing;
@@ -47,6 +49,11 @@ namespace CarRental.Business.Concrete
 
         public async Task<IDataResult<User>> RegisterAsync(UserForRegisterDto userForRegisterDto)
         {
+            var result = BusinessRules.Run(await CheckUserExist(userForRegisterDto.Email));
+            if (result != null)
+            {
+                return new ErrorDataResult<User>(result.Message);
+            }
             byte[] passwordHash, passwordSalt;
             HashingHelper.CreatePasswordHash(userForRegisterDto.Password, out passwordHash, out passwordSalt);
             var user = new User
@@ -61,14 +68,14 @@ namespace CarRental.Business.Concrete
             return new SuccessDataResult<User>(addedUser.Data);
         }
 
-        public async Task<IResult> UserExistsAsync(string email)
+        private async Task<IResult> CheckUserExist(string email)
         {
             var result = await _userService.GetByMailAsync(email);
-            if (result.IsSuccess)
+            if (!result.IsSuccess)
             {
                 return new SuccessResult();
             }
-            return new ErrorResult();
+            return new ErrorResult(Messages.EmailAlreadyExists);
         }
     }
 }
