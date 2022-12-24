@@ -29,7 +29,6 @@ namespace CarRental.Business.Concrete
             _userRepository = userRepository;
         }
 
-        [SecuredOperationAspect("admin")]
         public async Task<IDataResult<User>> AddAsync(User user)
         {
             var addedUser = await _userRepository.AddAsync(user);
@@ -83,7 +82,6 @@ namespace CarRental.Business.Concrete
             return new SuccessResult(Messages.UserDeleted);
         }
 
-        [SecuredOperationAspect("admin")]
         public async Task<IDataResult<User>> UpdateAsync(User entity)
         {
             var results = BusinessRules.Run(await IsUserExists(entity.Id));
