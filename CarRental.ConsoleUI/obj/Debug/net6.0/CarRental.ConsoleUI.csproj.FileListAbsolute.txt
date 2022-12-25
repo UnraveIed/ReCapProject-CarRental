@@ -70,3 +70,7 @@ C:\Users\np_ba\source\repos\ReCapProject\CarRental.ConsoleUI\bin\Debug\net6.0\Mi
 C:\Users\np_ba\source\repos\ReCapProject\CarRental.ConsoleUI\bin\Debug\net6.0\System.IO.Pipelines.dll
 C:\Users\np_ba\source\repos\ReCapProject\CarRental.ConsoleUI\bin\Debug\net6.0\Microsoft.AspNetCore.Http.Abstractions.dll
 C:\Users\np_ba\source\repos\ReCapProject\CarRental.ConsoleUI\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Binder.dll
+C:\Users\np_ba\source\repos\ReCapProject\CarRental.ConsoleUI\bin\Debug\net6.0\Microsoft.AspNetCore.Http.dll
+C:\Users\np_ba\source\repos\ReCapProject\CarRental.ConsoleUI\bin\Debug\net6.0\Microsoft.AspNetCore.WebUtilities.dll
+C:\Users\np_ba\source\repos\ReCapProject\CarRental.ConsoleUI\bin\Debug\net6.0\Microsoft.Extensions.ObjectPool.dll
+C:\Users\np_ba\source\repos\ReCapProject\CarRental.ConsoleUI\bin\Debug\net6.0\Microsoft.Net.Http.Headers.dll

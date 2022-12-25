@@ -75,5 +75,16 @@ namespace CarRental.WebAPI.Controllers
             }
             return BadRequest(result);
         }
+
+        [HttpPost("transactiontest")]
+        public async Task<IActionResult> TransactionTest(Color entity)
+        {
+            var result = await _colorService.TransactionTest(entity);
+            if (result.IsSuccess)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
     }
 }
