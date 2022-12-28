@@ -15,5 +15,6 @@ namespace CarRental.Business.Abstract
         Task<IDataResult<Rental>> AddAsync(Rental entity);
         Task<IDataResult<Rental>> UpdateAsync(Rental entity);
         Task<IResult> HardDeleteAsync(Rental entity);
+        Task<IDataResult<IList<Rental>>> GetAllWithBrandAndUserAsync();
     }
 }

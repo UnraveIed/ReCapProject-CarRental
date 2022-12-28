@@ -4,6 +4,7 @@ using CarRental.Business.ValidationRules.FluentValidation;
 using CarRental.DataAccess.Abstract;
 using CarRental.Entities.Concrete;
 using CarRental.Entities.Dtos;
+using Castle.DynamicProxy.Generators;
 using Core.Aspects.Autofac.Validation;
 using Core.Utilities.Results.Abstract;
 using Core.Utilities.Results.Concrete;
@@ -66,6 +67,20 @@ namespace CarRental.Business.Concrete
         {
             var updatedCar = await _carRepository.UpdateAsync(entity);
             return new SuccessDataResult<Car>(updatedCar);
+        }
+
+        public async Task<IDataResult<IList<Car>>> GetCarWithColorAndBrand()
+        {
+            List<Expression<Func<Car, bool>>> predicates = new();
+            List<Expression<Func<Car, object>>> includes = new();
+            includes.Add(x => x.Brand);
+            includes.Add(x => x.Color);
+            var cars = await _carRepository.GetAllAsync(predicates, includes);
+            if (cars.Count > 0)
+            {
+                return new SuccessDataResult<IList<Car>>(cars);
+            }
+            return new ErrorDataResult<IList<Car>>(Messages.CarNotFound);
         }
 
         #region UnitOfWork

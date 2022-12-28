@@ -16,6 +16,17 @@ namespace CarRental.WebAPI.Controllers
             _carService = carService;
         }
 
+        [HttpGet("getallwithbrandandcolor")]
+        public async Task<IActionResult> GetAllWithBrandAndColor()
+        {
+            var result = await _carService.GetCarWithColorAndBrand();
+            if (result.IsSuccess)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+
         [HttpGet("getall")]
         public async Task<IActionResult> GetAll()
         {

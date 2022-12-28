@@ -1,15 +1,17 @@
 ﻿using CarRental.Business.Abstract;
+using CarRental.Business.Constants;
 using CarRental.Business.ValidationRules.FluentValidation;
 using CarRental.DataAccess.Abstract;
 using CarRental.DataAccess.Concrete;
 using CarRental.Entities.Concrete;
+using Castle.DynamicProxy.Generators.Emitters.SimpleAST;
 using Core.Aspects.Autofac.Validation;
 using Core.Utilities.Results.Abstract;
 using Core.Utilities.Results.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -72,6 +74,23 @@ namespace CarRental.Business.Concrete
             }
             var updatedRental = await _rentalRepository.UpdateAsync(entity);
             return new SuccessDataResult<Rental>(updatedRental);
+        }
+
+        public async Task<IDataResult<IList<Rental>>> GetAllWithBrandAndUserAsync()
+        {
+            List<Expression<Func<Rental, bool>>> predicates = new();
+            List<Expression<Func<Rental, object>>> includes = new();
+
+            includes.Add(x => x.Car.Brand);
+            includes.Add(x => x.Customer.User);
+
+            var rentals = await _rentalRepository.GetAllAsync(predicates, includes);
+
+            if (rentals.Count > 0)
+            {
+                return new SuccessDataResult<IList<Rental>>(rentals);
+            }
+            return new ErrorDataResult<IList<Rental>>(Messages.CarNotFound);
         }
 
         #region UnitOfWork
