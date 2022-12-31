@@ -17,9 +17,9 @@ namespace CarRental.WebAPI.Controllers
         }
 
         [HttpGet("getallwithbrandandcolor")]
-        public async Task<IActionResult> GetAllWithBrandAndColor()
+        public async Task<IActionResult> GetAllWithBrandAndColor(int? brandId, int? colorId)
         {
-            var result = await _carService.GetCarWithColorAndBrand();
+            var result = await _carService.GetCarWithColorAndBrand(brandId, colorId);
             if (result.IsSuccess)
             {
                 return Ok(result);
@@ -38,10 +38,21 @@ namespace CarRental.WebAPI.Controllers
             return BadRequest(result);
         }
 
-        [HttpGet("getcardetail")]
-        public async Task<IActionResult> GetCarDetail()
+        [HttpGet("getallcardetail")]
+        public async Task<IActionResult> GetAllCarDetail()
         {
-            var result = await _carService.GetCarDetail();
+            var result = await _carService.GetAllCarDetail();
+            if (result.IsSuccess)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+
+        [HttpGet("getcardetail")]
+        public async Task<IActionResult> GetCarDetail(int carId)
+        {
+            var result = await _carService.GetCarDetailAsync(carId);
             if (result.IsSuccess)
             {
                 return Ok(result);

@@ -87,6 +87,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseStaticFiles();
+
 app.UseCors(options =>
 {
     options.WithOrigins("http://localhost:4201")

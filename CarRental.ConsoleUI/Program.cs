@@ -13,7 +13,7 @@ BrandManager b = new(new EfBrandRepository());
 //await BrandOperations(b);
 //await car.GetAllAsync().Data;
 
-var list = await car.GetCarDetail();
+var list = await car.GetAllCarDetail();
 
 foreach (var item in list.Data)
 {

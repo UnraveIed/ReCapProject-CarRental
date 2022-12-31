@@ -48,7 +48,6 @@ namespace CarRental.Business.Concrete
         public async Task<IDataResult<Car>> GetByIdAsync(int carId)
         {
             List<Expression<Func<Car, bool>>> predicates = new();
-            predicates.Add(x => x.Id == carId);
             var car = await _carRepository.GetAsync(predicates);
             if (car == null)
             {
@@ -57,10 +56,23 @@ namespace CarRental.Business.Concrete
             return new SuccessDataResult<Car>(car);
         }
 
-        public async Task<IDataResult<IList<CarDetailDto>>> GetCarDetail()
+        public async Task<IDataResult<IList<CarDetailDto>>> GetAllCarDetail()
         {
             var carDetails = await _carRepository.GetCarDetail();
             return new SuccessDataResult<IList<CarDetailDto>>(carDetails);
+        }
+
+        public async Task<IDataResult<Car>> GetCarDetailAsync(int carId)
+        {
+            List<Expression<Func<Car, bool>>> predicates = new();
+            List<Expression<Func<Car, object>>> includes = new();
+            predicates.Add(x => x.Id == carId);
+            includes.Add(x => x.Brand);
+            includes.Add(x => x.CarImages);
+            includes.Add(x => x.Rentals);
+            includes.Add(x => x.Color);
+            var carDetails = await _carRepository.GetAsync(predicates, includes);
+            return new SuccessDataResult<Car>(carDetails);
         }
 
         public async Task<IDataResult<Car>> UpdateAsync(Car entity)
@@ -69,9 +81,11 @@ namespace CarRental.Business.Concrete
             return new SuccessDataResult<Car>(updatedCar);
         }
 
-        public async Task<IDataResult<IList<Car>>> GetCarWithColorAndBrand()
+        public async Task<IDataResult<IList<Car>>> GetCarWithColorAndBrand(int? brandId, int? colorId)
         {
             List<Expression<Func<Car, bool>>> predicates = new();
+            if (brandId.HasValue) predicates.Add(x => x.BrandId == brandId.Value);
+            if (colorId.HasValue) predicates.Add(x => x.ColorId == colorId.Value);
             List<Expression<Func<Car, object>>> includes = new();
             includes.Add(x => x.Brand);
             includes.Add(x => x.Color);

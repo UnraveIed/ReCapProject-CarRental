@@ -12,11 +12,12 @@ namespace CarRental.Business.Abstract
     public interface ICarService
     {
         Task<IDataResult<IList<Car>>> GetAllAsync();
-        Task<IDataResult<IList<CarDetailDto>>> GetCarDetail();
+        Task<IDataResult<IList<CarDetailDto>>> GetAllCarDetail();
+        Task<IDataResult<Car>> GetCarDetailAsync(int carId);
         Task<IDataResult<Car>> AddAsync(Car entity);
         Task<IDataResult<Car>> UpdateAsync(Car entity);
         Task<IResult> HardDeleteAsync(Car entity);
         Task<IDataResult<Car>> GetByIdAsync(int carId);
-        Task<IDataResult<IList<Car>>> GetCarWithColorAndBrand();
+        Task<IDataResult<IList<Car>>> GetCarWithColorAndBrand(int? brandId, int? colorId);
     }
 }
