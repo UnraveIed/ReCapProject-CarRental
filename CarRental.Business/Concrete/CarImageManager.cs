@@ -92,7 +92,7 @@ namespace CarRental.Business.Concrete
             carImages.Add(new CarImage
             {
                 CarId = carId,
-                ImagePath = "images/carImages/Default.png"
+                ImagePath = "/carImages/Default.png"
             });
 
             return new SuccessDataResult<List<CarImage>>(carImages);

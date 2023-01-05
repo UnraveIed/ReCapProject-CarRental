@@ -68,7 +68,7 @@ namespace CarRental.Business.Concrete
             List<Expression<Func<Car, object>>> includes = new();
             predicates.Add(x => x.Id == carId);
             includes.Add(x => x.Brand);
-            includes.Add(x => x.CarImages);
+            //includes.Add(x => x.CarImages);
             includes.Add(x => x.Rentals);
             includes.Add(x => x.Color);
             var carDetails = await _carRepository.GetAsync(predicates, includes);
